@@ -3,7 +3,7 @@ import React from 'react'
 const PortfolioDetail = () => {
   return (
     <>
-      <section className='md:py-24 py-16 dark:bg-darkmode'>
+      <section className='md:py-24 py-16 dark:bg-orange'>
         <div className='container mx-auto max-w-6xl'>
           <div className='flex md:flex-row flex-col items-start w-full justify-between flex-wrap sm:flex-nowrap lg:gap-0 gap-8'>
             <div className='lg:w-[60%] w-full'>
@@ -28,7 +28,7 @@ const PortfolioDetail = () => {
               </div>
             </div>
             <div
-              className='flex flex-col items-start bg-white shadow-[0px_20px_80px_0px_#68758D26] pt-10 lg:pl-14 pl-9 pb-8 lg:pr-40 pr-10 lg:w-[30%] w-full dark:bg-darklight'
+              className='flex flex-col items-start bg-white shadow-[0px_20px_80px_0px_#68758D26] pt-10 lg:pl-14 pl-9 pb-8 lg:pr-40 pr-10 lg:w-[30%] w-full dark:bg-orange'
               data-aos='fade-left'
               data-aos-delay='200'
               data-aos-duration='1000'>

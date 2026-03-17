@@ -7,7 +7,7 @@ const Counter = ({ isColorMode }: { isColorMode: Boolean }) => {
     <section
       className={` ${
         isColorMode
-          ? 'dark:bg-darklight bg-section'
+          ? 'dark:bg-orange bg-section'
           : 'dark:bg-darkmode bg-white'
       }`}>
       <div className='container mx-auto max-w-6xl px-4'>

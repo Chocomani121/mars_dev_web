@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 const Services = () => {
   return (
-    <section className='bg-section dark:bg-darklight' id='services'>
+    <section className='bg-section dark:bg-orange' id='services'>
       <div className='container mx-auto max-w-6xl px-4'>
         <div
           className='flex gap-2 items-center justify-center'

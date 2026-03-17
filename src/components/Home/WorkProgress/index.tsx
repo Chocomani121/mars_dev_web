@@ -21,8 +21,8 @@ const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
     <section
       className={`scroll-mt-25 ${
         isColorMode
-          ? 'dark:bg-darklight bg-section'
-          : 'dark:bg-darkmode bg-white'
+          ? 'dark:bg-orange bg-section'
+          : 'dark:bg-dark_orange bg-white'
       }`}
       id='about'>
       <div className='container mx-auto max-w-6xl px-4'>

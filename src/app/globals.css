@@ -49,7 +49,9 @@
   --color-section: #f8fafc;
   --color-darkmode: #081738;
   --color-darklight: #000f30;
-  --color-dark_border: #224767;
+  --color-orange: #FF8C00;
+  --color-dark_orange: #CC6600;
+  --color-dark_border: #FFFFFF;
   --color-Sky-blue-mist: #c0d5fb;
 
   --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
