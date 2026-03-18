@@ -23,7 +23,7 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Link href={item.href} className={`text-base flex py-2 font-normal hover:text-primary dark:hover:text-primary text-black dark:text-white  ${path === item.href ? 'text-primary dark:text-primary!' : '  '} ${path.startsWith("/blog") && item.href==="/blog"?"text-primary! dark:text-primary!":null} ${path.startsWith("/portfolio") && item.href==="/portfolio"?"text-primary! dark:text-primary!":null}`}>
+      <Link href={item.href} className={`text-base flex py-2 font-normal hover:text-primary dark:hover:text-orange text-black dark:text-white  ${path === item.href ? 'text-orange dark:text-orange!' : '  '} ${path.startsWith("/blog") && item.href==="/blog"?"text-orange! dark:text-orange!":null} ${path.startsWith("/portfolio") && item.href==="/portfolio"?"text-orange! dark:text-orange!":null}`}>
         {item.label}
         {item.submenu && (
           <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
@@ -33,7 +33,7 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
       </Link>
       {submenuOpen && (
         <div
-          className={`absolute py-2 left-0 mt-0.5 top-8 w-60 bg-white dark:bg-darklight shadow-lg dark:shadow-dark-md rounded-lg `}
+          className={`absolute py-2 left-0 mt-0.5 top-8 w-60 bg-white dark:bg-orange shadow-lg dark:shadow-dark-md rounded-lg `}
           data-aos="fade-up"
           data-aos-duration="400"
         >
