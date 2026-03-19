@@ -80,7 +80,8 @@ const Header: React.FC = () => {
     <header
       className={`fixed h-24 top-0 py-1 z-50 w-full dark:bg-transparent transition-all ${
         sticky
-          ? 'shadow-lg bg-white/80 backdrop-blur-md dark:bg-orange/80 dark:backdrop-blur-md dark:shadow-dark-md'
+          // ? 'shadow-lg bg-white/80 backdrop-blur-md dark:bg-orange/80 dark:backdrop-blur-md dark:shadow-dark-md'
+          ? 'shadow-lg bg-white dark:shadow-dark-md dark:bg-orange!'
           : 'shadow-none'
       }`}>
       <div className='container mx-auto max-w-6xl flex items-center justify-between p-6'>
@@ -143,7 +144,11 @@ const Header: React.FC = () => {
           )}
           <Link
             href='#'
-            className='hidden lg:block bg-orange text-white px-4 py-2 rounded-lg hover:bg-dark_orange'
+            className={`hidden lg:block rounded-lg px-4 py-2 font-medium transition-colors ${
+              sticky
+                ? 'bg-white text-orange shadow-md hover:bg-gray-100 dark:bg-white dark:text-orange dark:hover:bg-gray-100'
+                : 'bg-orange text-white hover:bg-dark_orange'
+            }`}
             onClick={() => {
               setIsSignUpOpen(true)
             }}>

@@ -34,18 +34,30 @@ export const Progress = [
 export const Servicebox = [
     {
         icon: '/images/services/ux-design-product_1.svg',
-        title: 'UX & Product Design',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        title: 'General Construction',
+        description: 'Residential, commercial, and governmental buildings',
     },
     {
         icon: '/images/services/perfomance-optimization.svg',
-        title: 'Performance Optimization',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        title: 'Infrastructure Development',
+        description: 'Including roads, bridges, and public utilities.',
     },
     {
         icon: '/images/services/ux-design-product_2.svg',
-        title: 'UX & Products Design',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        title: 'Project Management',
+        description: 'Comprehensive oversight from conception to completion.',
+    },
+
+    {
+        icon: '/images/services/ux-design-product_2.svg',
+        title: 'Architectural Design',
+        description: 'Innovative designs from our experienced architectural team.',
+    },
+
+    {
+        icon: '/images/services/ux-design-product_2.svg',
+        title: 'Consultancy and Legal Services',
+        description: 'Expert legal oversight to ensure compliance and project success.',
     },
 ]
 

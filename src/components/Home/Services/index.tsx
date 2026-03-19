@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 const Services = () => {
   return (
-    <section className='bg-section dark:bg-orange' id='services'>
+    <section className='bg-section dark:bg-orange ' id='services'>
       <div className='container mx-auto max-w-6xl px-4'>
         <div
           className='flex gap-2 items-center justify-center'
@@ -26,7 +26,7 @@ const Services = () => {
           Services specifically designed to meet your business needs
         </h2>
         <div className='grid md:grid-cols-12 sm:grid-cols-8 grid-cols-1 gap-7'>
-          {Servicebox.map((item, index) => (
+          {Servicebox.map((item, index) => (  
             <div
               key={index}
               data-aos='fade-up'
