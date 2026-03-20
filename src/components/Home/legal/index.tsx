@@ -5,11 +5,11 @@ import { Progress as ProgressData } from '@/app/api/data' // Assuming Progress i
 
 // Define the interface for ProgressItem
 
-const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
+const legal = ({ isColorMode }: { isColorMode: Boolean }) => {
 
 
   return (
-    <section className='dark:bg-dark_orange bg-section bg-[url(/images/hero/emp.png)] bg-cover bg-center bg-no-repeat text-white'
+    <section className='dark:bg-dark_orange bg-section '
       // className={`scroll-mt-25 ${
       //   isColorMode
       //     ? 'dark:bg-dark_orange bg-section'
@@ -84,4 +84,4 @@ const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
   )
 }
 
-export default Progresswork
+export default legal
