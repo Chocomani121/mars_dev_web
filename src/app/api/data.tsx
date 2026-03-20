@@ -23,7 +23,10 @@ export const count = [
         value: "45M+",
         description: "Revenue generated through new projects & marketing",
     },
+
 ];
+
+
 
 export const Progress = [
     { title: 'UX Research and Testing', Progress: 95 },

@@ -16,10 +16,9 @@ const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
       //     : 'dark:bg-dark_orange bg-white'
       // } ` }
       id='about'>
- 
    <div className='container mx-auto max-w-6xl px-4 py-16'>
       <div className='grid md:grid-cols-2 items-stretch gap-8'>
-        
+
         <div 
           className='group p-8 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow-md hover:shadow-xl transition-all duration-300'
           data-aos='fade-right'
