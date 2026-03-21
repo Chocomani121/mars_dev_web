@@ -7,7 +7,7 @@ const Counter = ({ isColorMode }: { isColorMode: Boolean }) => {
   return (
     <section
       className={`py-16 ${
-        isColorMode ? 'dark:bg-orange bg-section' : 'dark:bg-darkmode bg-white'
+        isColorMode ? 'dark:bg-orange bg-section' : 'dark:bg-white bg-white'
       }`}
     >
       <div className="container mx-auto max-w-4xl px-4">

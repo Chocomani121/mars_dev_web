@@ -20,7 +20,7 @@ const Services = () => {
           </span>
         </div>
         <h2
-          className='sm:text-4xl text-[28px] leading-tight font-bold text-midnight_text md:text-center text-start pt-7 pb-20 md:w-4/6 w-full m-auto dark:text-orange'
+          className='sm:text-4xl text-[28px] leading-tight font-bold text-midnight_text md:text-center text-start pt-7 pb-20 md:w-4/6 w-full m-auto dark:darkmode'
           data-aos='fade-up'
           data-aos-delay='200'
           data-aos-duration='1000'>
@@ -28,39 +28,58 @@ const Services = () => {
         </h2>
         <div className='grid md:grid-cols-12 sm:grid-cols-8 grid-cols-1 gap-7'>
           {Servicebox.map((item, index) => (  
+            // <div
+            //   key={index}
+            //   data-aos='fade-up'
+            //   data-aos-delay={`${index * 200}`}
+            //   data-aos-duration='1000'
+            //   data-aos-offset='300'
+            //   className='col-span-4 bg-white flex flex-col justify-between items-center text-center py-14 px-7 shadow-service rounded-md gap-8 dark:bg-orange'>
+            //   <Image
+            //     src={item.icon}
+            //     alt='Service Box'
+            //     width={0}
+            //     height={0}
+            //     className='w-10 h-10 bg-no-repeat inline-block bg-contain'
+            //   />
+            //   <h3 className='max-w-44 mx-auto text-2xl font-bold'>
+            //     {item.title}
+            //   </h3>
+            //   <p className='dark:text-white/50 text-base font-normal'>
+            //     {item.description}
+            //   </p>
+            // </div>
+            // Inside your .map((item, index) => (...))
             <div
               key={index}
-              data-aos='fade-up'
-              data-aos-delay={`${index * 200}`}
-              data-aos-duration='1000'
-              data-aos-offset='300'
-              className='col-span-4 bg-white flex flex-col justify-between items-center text-center py-14 px-7 shadow-service rounded-md gap-8 dark:bg-orange'>
-              <Image
-                src={item.icon}
-                alt='Service Box'
-                width={0}
-                height={0}
-                className='w-10 h-10 bg-no-repeat inline-block bg-contain'
-              />
-              <h3 className='max-w-44 mx-auto text-2xl font-bold'>
-                {item.title}
-              </h3>
-              <p className='dark:text-white/50 text-base font-normal'>
-                {item.description}
-              </p>
-              <Link
-                href='#'
-                className='hover:text-blue-700 text-lg font-medium text-primary group flex items-center'>
-                Get Started
-                <span>
-                  <Icon
-                    icon='ei:chevron-right'
-                    width='30'
-                    height='30'
-                    className=''
-                  />
-                </span>
-              </Link>
+              className='col-span-4 bg-white flex flex-col justify-between items-center text-center overflow-hidden shadow-service rounded-md dark:bg-darker_orange'
+            >
+              {/* Add a featured image at the top of the card */}
+              <div className="w-full h-48 relative">
+                <Image 
+                    src={item.image || ''} 
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                />
+              </div>
+
+              <div className="py-10 px-7 flex flex-col items-center gap-4">
+                {/* Keep the icon or move it to overlap the image */}
+                {/* <Image
+                  src={item.icon}
+                  alt='Icon'
+                  width={40}
+                  height={40}
+                  className='bg-no-repeat inline-block bg-contain'
+                /> */}
+                <h3 className='max-w-44 mx-auto text-2xl font-bold text-midnight_text dark:text-white'>
+                  {item.title}
+                </h3>
+                <p className='dark:text-white/80 text-base font-normal'>
+                  {item.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

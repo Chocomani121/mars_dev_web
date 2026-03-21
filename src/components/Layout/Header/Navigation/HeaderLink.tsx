@@ -40,13 +40,13 @@ const HeaderLink: React.FC<{ item: HeaderItem; sticky?: boolean }> = ({
         className={[
           'text-base flex py-2 font-normal transition-colors hover:text-primary',
           isStickyHeader
-            ? 'text-black dark:text-stone-950 dark:hover:text-white'
-            : 'text-black dark:text-white dark:hover:text-darkmode',
+            ? 'text-black dark:text-stone-950 dark:hover:text-darker_orange'
+            : 'text-black dark:text-white dark:hover:text-darker_orange',
           // Active styling
           isActive
             ? isStickyHeader
               ? 'text-orange dark:text-white dark:font-semibold'
-              : 'text-orange dark:text-darklight!'
+              : 'text-orange dark:text-darker_orange!'
             : '',
         ].join(' ')}
       >

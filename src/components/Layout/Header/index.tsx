@@ -80,8 +80,8 @@ const Header: React.FC = () => {
     <header
       className={`fixed h-24 top-0 py-1 z-50 w-full dark:bg-transparent transition-all ${
         sticky
-          // ? 'shadow-lg bg-white/80 backdrop-blur-md dark:bg-orange/80 dark:backdrop-blur-md dark:shadow-dark-md'
-          ? 'shadow-lg bg-white dark:shadow-dark-md dark:bg-orange!'
+          ? 'shadow-lg bg-white/80 backdrop-blur-md dark:bg-orange/80 dark:backdrop-blur-md dark:shadow-dark-md'
+          // ? 'shadow-lg bg-white dark:shadow-dark-md dark:bg-orange!'
           : 'shadow-none'
       }`}>
       <div className='container mx-auto max-w-6xl flex items-center justify-between p-6'>

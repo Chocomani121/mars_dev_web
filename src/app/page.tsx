@@ -1,7 +1,7 @@
 import React from 'react'
 import { Metadata } from "next";
 import Hero from '@/components/Home/Hero';
-import Legal from '@/components/Home/Legal';
+// import Legal from '@/components/Home/Legal';
 import Counter from '@/components/Home/Counter'
 import Progresswork from '@/components/Home/WorkProgress';
 import Services from '@/components/Home/Services';
@@ -20,7 +20,7 @@ export default function Home() {
       <Hero />
       <Counter isColorMode={false} />
       <Progresswork isColorMode={false} />
-      <Legal isColorMode={false} />
+      {/* <Legal isColorMode={false} /> */}
       <Services />
       <Portfolio />
       <Testimonial />

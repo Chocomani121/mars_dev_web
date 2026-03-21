@@ -21,7 +21,7 @@ const Logo: React.FC = () => {
         height={50}
         style={{ width: '60px', height: 'auto' }}
         quality={100}
-        className='dark:block hidden drop-shadow-[0_0_10px_rgba(255,255,255,0.85)]'
+        // className='dark:block hidden drop-shadow-[0_0_10px_rgba(255,255,255,0.85)]'
       />
     </Link>
   );

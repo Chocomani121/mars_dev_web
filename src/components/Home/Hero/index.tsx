@@ -39,7 +39,7 @@ const Hero = () => {
             height={150}
             quality={100}
             style={{ width: '100%', height: 'auto' }}
-            className='drop-shadow-[0_0_10px_rgba(255,255,255,0.85)]'
+            // className='drop-shadow-[0_0_10px_rgba(255,255,255,0.85)]'
           />
         </div>
       </div>
