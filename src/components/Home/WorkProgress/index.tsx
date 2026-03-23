@@ -4,82 +4,83 @@ import Image from 'next/image'
 import { Progress as ProgressData } from '@/app/api/data' // Assuming Progress is correctly imported
 
 // Define the interface for ProgressItem
-interface ProgressItem {
-  title: string
-  Progress: number
-}
 
 const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
-  const [progressValues, setProgressValues] = useState<ProgressItem[]>([]) // Initialize with ProgressItem[]
 
-  useEffect(() => {
-    // Fetch progress data or use static data (Progress array)
-    setProgressValues(ProgressData)
-  }, [])
 
   return (
-    <section
-      className={`scroll-mt-25 ${
-        isColorMode
-          ? 'dark:bg-orange bg-section'
-          : 'dark:bg-dark_orange bg-white'
-      }`}
+    <section className='dark:bg-dark_orange bg-section bg-[url(/images/hero/emp.png)] bg-cover bg-center bg-no-repeat text-white'
+      // className={`scroll-mt-25 ${
+      //   isColorMode
+      //     ? 'dark:bg-dark_orange bg-section'
+      //     : 'dark:bg-dark_orange bg-white'
+      // } ` }
       id='about'>
-      <div className='container mx-auto max-w-6xl px-4'>
-        <div className='grid md:grid-cols-12 items-center gap-7'>
-          <div className='md:col-span-6'>
-            <Image
-              src='/images/work-progress/progress-work.png'
-              alt='logo'
-              width={375}
-              height={0}
-              quality={100}
-              style={{ width: '100%', height: 'auto' }}
-              className='md:block hidden'
-            />
-          </div>
-          <div
-            className='md:col-span-6'
-            data-aos='fade-left'
-            data-aos-delay='200'
-            data-aos-duration='1000'>
-            <div className='flex gap-2 items-center'>
-              <span className='w-3 h-3 rounded-full bg-success'></span>
-              <span className='font-medium text-midnight_text text-sm dark:text-white/50'>
-                build everything
-              </span>
+ 
+   <div className='container mx-auto max-w-6xl px-4 py-16'>
+      <div className='grid md:grid-cols-2 items-stretch gap-8'>
+        
+        <div 
+          className='group p-8 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow-md hover:shadow-xl transition-all duration-300'
+          data-aos='fade-right'
+          data-aos-delay='200'
+          data-aos-duration='1000'>
+          <div className="flex items-center gap-4 mb-6">
+            <div className="p-3 bg-midnight_text/5 dark:bg-white/10 rounded-lg group-hover:scale-110 transition-transform">
+              <svg 
+                className="w-8 h-8 text-midnight_text dark:text-white" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth="2" 
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
+                />
+              </svg>
             </div>
-            <h2 className='pt-9 pb-8 text-midnight_text font-bold dark:text-white text-4xl'>
-              Build amazing websites and landing pages with ease
+            <h2 className='text-midnight_text font-bold dark:text-white text-3xl'>
+              Our Mission
             </h2>
-            <p className='text-gray dark:text-white/70 text-base font-semibold'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-              ipsum suspendisse ultrices gravida.
-            </p>
-
-            <div className='block mx-auto pt-12'>
-              {progressValues.map((item, index) => (
-                <div
-                  key={index}
-                  className='progress_bar_item flex flex-wrap mb-8'>
-                  <div className='flex-1 w-auto text-sm font-normal text-grey mb-2 dark:text-white/50'>
-                    {item.title}
-                  </div>
-                  <div className='item_value shrink text-sm font-normal text-grey mb-2 dark:text-white/50'>
-                    {item.Progress}%
-                  </div>
-                  <div className='relative h-1 w-full bg-primary/30 rounded-md'>
-                    <div
-                      className='progress absolute left-0 top-0 bottom-0 h-full bg-primary rounded-md duration-100 ease-in-out'
-                      style={{ width: `${item.Progress}%` }}></div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
+          <p className='text-gray dark:text-white/70 text-base font-medium leading-relaxed'>
+            Our mission is to deliver construction projects that not only meet but exceed 
+            our clients' expectations. 
+            <br /><br />
+            We are committed to craftsmanship, attention to detail, and a rigorous 
+            approach to service, ensuring every project is completed efficiently and on schedule.
+          </p>
         </div>
+
+        {/* Vision Card */}
+        <div
+          className='group p-8 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow-md hover:shadow-xl transition-all duration-300'       
+          data-aos='fade-left'
+          data-aos-delay='200'
+          data-aos-duration='1000'>
+          <div className="flex items-center gap-4 mb-6">
+            <div className="p-3 bg-midnight_text/5 dark:bg-white/10 rounded-lg group-hover:scale-110 transition-transform">
+              {/* You can swap this SVG for a Lucide icon like 'Eye' */}
+              <svg className="w-8 h-8 text-midnight_text dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            </div>
+            <h2 className='text-midnight_text font-bold dark:text-white text-3xl'>
+              Our Vision
+            </h2>
+          </div>
+          <p className='text-gray dark:text-white/70 text-base font-medium leading-relaxed'>
+            Mars Development Corporation aims to be a prominent leader in the 
+            Philippine construction industry, recognized for our ability to take on 
+            complex projects with the same diligence and innovation as the 
+            industry’s larger firms, all while maintaining strict adherence to 
+            timelines and efficiency.
+          </p>
+        </div>
+
       </div>
+    </div>
     </section>
   )
 }

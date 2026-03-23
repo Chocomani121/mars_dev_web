@@ -11,11 +11,11 @@ const Footer: FC = () => {
             <div className='sm:content-normal sm:text-start text-center content-center sm:w-auto w-full'>
               <Link href='/' className='md:block flex justify-center'>
                 <Image
-                  src='/images/logo/logo-white.svg'
+                  src='/images/logo/marsdev.png'
                   alt='logo'
                   width={160}
                   height={50}
-                  style={{ width: 'auto', height: 'auto' }}
+                  style={{ width: '300px', height: 'auto' }}
                   quality={100}
                   unoptimized
                 />
@@ -25,8 +25,8 @@ const Footer: FC = () => {
               </h2>
               <Link
                 href='#'
-                className='px-9 py-3 rounded-lg bg-primary text-white hover:bg-blue-700 hover:shadow-none'>
-                Get Started
+                className='px-9 py-3 rounded-lg bg-orange text-white hover:bg-blue-700 hover:shadow-none'>
+                Get Quotation
               </Link>
             </div>
           </div>
@@ -156,12 +156,12 @@ const Footer: FC = () => {
             </li>
             <li className='text-base text-white/50'>
               <Link href='/portfolio' className='hover:text-primary'>
-                Portfolio
+                Our Work
               </Link>
             </li>
             <li className='text-base text-white/50'>
               <Link href='/blog' className='hover:text-primary'>
-                Blog
+                Meet the Teams
               </Link>
             </li>
             <li className='text-base text-white/50'>
@@ -173,12 +173,7 @@ const Footer: FC = () => {
         </div>
         <div>
           <p className='text-base text-white/50'>
-            © All rights reserved. Made by{' '}
-            <Link
-              href='https://getnextjstemplates.com/'
-              className='hover:text-primary'>
-              GetNextJs Templates
-            </Link>
+            © All rights reserved. Mars Devt Corporation
           </p>
         </div>
       </div>

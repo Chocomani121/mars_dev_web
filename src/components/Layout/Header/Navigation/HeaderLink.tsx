@@ -4,7 +4,10 @@ import Link from 'next/link';
 import { HeaderItem } from '../../../../types/menu';
 import { usePathname } from 'next/navigation';
 
-const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
+const HeaderLink: React.FC<{ item: HeaderItem; sticky?: boolean }> = ({
+  item,
+  sticky = false,
+}) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const path = usePathname()
   const handleMouseEnter = () => {
@@ -17,13 +20,36 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
     setSubmenuOpen(false);
   };
 
+  
+  
+  const isStickyHeader = !!sticky
+
+  const isActive =
+    path === item.href ||
+    (path.startsWith('/blog') && item.href === '/blog') ||
+    (path.startsWith('/portfolio') && item.href === '/portfolio')
+
   return (
     <div
       className="relative"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Link href={item.href} className={`text-base flex py-2 font-normal hover:text-primary dark:hover:text-orange text-black dark:text-white  ${path === item.href ? 'text-orange dark:text-orange!' : '  '} ${path.startsWith("/blog") && item.href==="/blog"?"text-orange! dark:text-orange!":null} ${path.startsWith("/portfolio") && item.href==="/portfolio"?"text-orange! dark:text-orange!":null}`}>
+      <Link
+        href={item.href}
+        className={[
+          'text-base flex py-2 font-normal transition-colors hover:text-primary',
+          isStickyHeader
+            ? 'text-black dark:text-stone-950 dark:hover:text-darker_orange'
+            : 'text-black dark:text-white dark:hover:text-darker_orange',
+          // Active styling
+          isActive
+            ? isStickyHeader
+              ? 'text-orange dark:text-white dark:font-semibold'
+              : 'text-orange dark:text-darker_orange!'
+            : '',
+        ].join(' ')}
+      >
         {item.label}
         {item.submenu && (
           <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
@@ -41,10 +67,12 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
             <Link
               key={index}
               href={subItem.href}
-              className={`block px-4 py-2 text-[15px]  ${
+              className={`block px-4 py-2 text-[15px] ${
                 path === subItem.href
-                  ? "bg-primary text-white"
-                  : "text-black hover:bg-gray-200 dark:hover:bg-midnight_text dark:text-white hover:text-dark dark:hover:text-white"
+                  ? 'bg-primary text-white'
+                  : isStickyHeader
+                    ? 'text-black hover:bg-gray-200 dark:text-stone-950 dark:hover:bg-midnight_text dark:hover:text-white'
+                    : 'text-black hover:bg-gray-200 dark:hover:bg-midnight_text dark:text-white hover:text-dark dark:hover:text-white'
               }`}
             >
               {subItem.label}

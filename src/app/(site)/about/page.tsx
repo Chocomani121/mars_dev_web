@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import Counter from "@/components/Home/Counter";
 import Progresswork from "@/components/Home/WorkProgress";
 export const metadata: Metadata = {
-    title: "About | Venus",
+    title: "About | Mars Devt Corporation",
 };
 
 const page = () => {
@@ -17,10 +17,23 @@ const page = () => {
     <>
       <HeroSub
         title="About Us"
-        description="Discover a wealth of insightful materials meticulously crafted to provide you with a comprehensive understanding of the latest trends."
+        description="
+        Mars Development Corporation is an 
+        emerging construction firm based in 
+        Consolacion, Cebu, poised to excel in 
+        both private and government sector 
+        construction projects. 
+        
+        Despite being a new player, our firm 
+        is committed to competing with 
+        established companies by upholding 
+        the highest standards of quality, 
+        efficiency, and timely delivery.
+
+        "
         breadcrumbLinks={breadcrumbLinks}
       />
-       <Counter isColorMode={true} />
+       {/* <Counter isColorMode={true} /> */}
        <Progresswork isColorMode={true} />
     </>
   );

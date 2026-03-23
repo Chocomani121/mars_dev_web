@@ -51,9 +51,13 @@
   --color-darklight: #000f30;
   --color-orange: #FF8C00;
   --color-dark_orange: #CC6600;
+  --color-darker_orange: #f47000;
+  --color:blue: #007c95;
+  --color:dark_blue: #00608b;
   --color-dark_border: #FFFFFF;
   --color-Sky-blue-mist: #c0d5fb;
   --color-teal: #218e91;
+
 
   --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
   --background-image-gradient-conic: conic-gradient(
