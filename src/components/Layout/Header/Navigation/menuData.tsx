@@ -9,8 +9,8 @@ export const headerData: HeaderItem[] = [
     label: "More",
     href: "/blog",
     submenu: [
-      { label: "Meet the teams", href: "/blog" },
-      { label: "View Project", href: "/blog/Blog_1" },
+      { label: "View projects", href: "/blog" },
+      { label: "Meet the teams", href: "/blog/Blog_1" },
     ],
   },
 
