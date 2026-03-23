@@ -86,7 +86,7 @@ const Header: React.FC = () => {
       }`}>
       <div className='container mx-auto max-w-6xl relative flex h-full items-center p-6'>
         {/* Logo - absolute, won't affect nav/button when resized */}
-        <div className='absolute left-6 top-1/2 -translate-y-1/2'>
+        <div className='absolute left-5 top-1/2 -translate-y-1/2'>
           <Logo />
         </div>
         {/* Nav - centered independently */}

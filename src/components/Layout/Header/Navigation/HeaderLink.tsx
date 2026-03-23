@@ -38,7 +38,7 @@ const HeaderLink: React.FC<{ item: HeaderItem; sticky?: boolean }> = ({
           'text-base flex items-center gap-1 py-2 px-3 font-medium rounded-lg transition-all duration-200',
           // 'hover:bg-gray-100 dark:hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange focus-visible:ring-offset-2',
           // Always readable: dark text on white (light), light text on orange (dark)
-          'text-black dark:text-white hover:text-orange dark:hover:text-darker_orange',
+          'text-black dark:text-white hover:text-orange dark:hover:text-teal',
           // Active styling - distinct so it's visible when selected
           isActive
             ? 'text-orange font-semibold bg-orange/10 dark:bg-white/20 dark:text-white dark:font-semibold'
