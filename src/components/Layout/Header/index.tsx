@@ -78,20 +78,25 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed h-24 top-0 py-1 z-50 w-full dark:bg-transparent transition-all ${
+      className={`fixed h-24 top-0 py-1 z-50 w-full transition-all ${
         sticky
-          ? 'shadow-lg bg-white/80 backdrop-blur-md dark:bg-orange/80 dark:backdrop-blur-md dark:shadow-dark-md'
-          // ? 'shadow-lg bg-white dark:shadow-dark-md dark:bg-orange!'
-          : 'shadow-none'
+          ? 'shadow-lg bg-white dark:bg-orange dark:shadow-dark-md'
+          : 'bg-white/90 dark:bg-transparent'
+          // : 'bg-white/90 dark:bg-orange/80 backdrop-blur-md'
       }`}>
-      <div className='container mx-auto max-w-6xl flex items-center justify-between p-6'>
-        <Logo />
-        <nav className='hidden lg:flex grow items-center justify-center gap-6'>
+      <div className='container mx-auto max-w-6xl relative flex h-full items-center p-6'>
+        {/* Logo - absolute, won't affect nav/button when resized */}
+        <div className='absolute left-6 top-1/2 -translate-y-1/2'>
+          <Logo />
+        </div>
+        {/* Nav - centered independently */}
+        <nav className='hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-6'>
           {headerData.map((item, index) => (
-            <HeaderLink key={index} item={item} />
+            <HeaderLink key={index} item={item} sticky={sticky} />
           ))}
         </nav>
-        <div className='flex items-center gap-4'>
+        {/* Contact - right aligned independently */}
+        <div className='absolute right-6 top-1/2 flex -translate-y-1/2 items-center gap-4'>
           {/* <button
             aria-label='Toggle theme'
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
@@ -147,7 +152,7 @@ const Header: React.FC = () => {
             className={`hidden lg:block rounded-lg px-4 py-2 font-medium transition-colors ${
               sticky
                 ? 'bg-white text-orange shadow-md hover:bg-gray-100 dark:bg-white dark:text-orange dark:hover:bg-gray-100'
-                : 'bg-orange text-white hover:bg-dark_orange'
+                : 'bg-white text-orange shadow-md hover:bg-gray-100 dark:bg-orange dark:text-white dark:hover:bg-gray-100'
             }`}
             onClick={() => {
               setIsSignUpOpen(true)
@@ -156,8 +161,8 @@ const Header: React.FC = () => {
           </Link>
           {isSignUpOpen && (
             <div
-              ref={signUpRef}
-              className='fixed top-0 m-0! left-0 w-full h-full bg-black/50 flex items-center justify-center z-50'>
+              ref={signUpRef}   
+              className='fixed top-0 m-0! left-0 w-full h-full bg- /50 flex items-center justify-center z-50'>
               <div className='relative mx-auto w-full max-w-md overflow-hidden rounded-lg bg-white px-8 py-14 text-center dark:bg-darklight'>
                 <button
                   onClick={() => setIsSignUpOpen(false)}
