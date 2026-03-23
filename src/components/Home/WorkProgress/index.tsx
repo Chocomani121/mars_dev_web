@@ -9,15 +9,11 @@ const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
 
 
   return (
-    <section className='dark:bg-dark_orange bg-section bg-[url(/images/hero/emp.png)] bg-cover bg-center bg-no-repeat text-white'
-      // className={`scroll-mt-25 ${
-      //   isColorMode
-      //     ? 'dark:bg-dark_orange bg-section'
-      //     : 'dark:bg-dark_orange bg-white'
-      // } ` }
+    <section className='relative dark:bg-dark_orange bg-section bg-[url(/images/hero/emp.png)] bg-cover bg-center bg-no-repeat bg-fixed text-white overflow-hidden'
       id='about'>
- 
-   <div className='container mx-auto max-w-6xl px-4 py-16'>
+      {/* Semi-transparent overlay - same as Hero: muted background, legible content */}
+      <div className='absolute inset-0 bg-white/65 dark:bg-white/40 -z-0' aria-hidden />
+   <div className='container mx-auto max-w-6xl px-4 py-16 relative z-10'>
       <div className='grid md:grid-cols-2 items-stretch gap-8'>
         
         <div 
@@ -25,6 +21,7 @@ const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
           data-aos='fade-right'
           data-aos-delay='200'
           data-aos-duration='1000'>
+            
           <div className="flex items-center gap-4 mb-6">
             <div className="p-3 bg-midnight_text/5 dark:bg-white/10 rounded-lg group-hover:scale-110 transition-transform">
               <svg 
