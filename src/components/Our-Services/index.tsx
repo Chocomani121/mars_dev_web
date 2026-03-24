@@ -23,7 +23,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
       <div className="absolute -left-24 bottom-0 h-96 w-96 rounded-full bg-blue-100/30 blur-3xl dark:bg-blue-900/10" />
 
       <div className="container mx-auto max-w-7xl px-4">
-        
+
         {/* Header Section */}
 
         <motion.div 
@@ -67,7 +67,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
 
           {/* 2. The Orange Floating Card (Now shifted to the Left) */}
           <motion.div 
-            initial={{ opacity: 0, x: -50 }} // Slide in from left
+            initial={{ opacity: 0, x: -50 }} 
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}

@@ -11,17 +11,17 @@ interface HeroSubProps {
   breadcrumbLinks: BreadcrumbLink[];
 }
 
-// const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
-//   const fadeInUp = {
-//     hidden: { opacity: 0, y: 20 },
-//     visible: { opacity: 1, y: 0 }
-//   };
-
 
 const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
 
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
-    <section className="relative overflow-hidden bg-[#f8fafc] py-16 pt-36 dark:bg-slate-900 md:py-24 md:pt-44">
+    
+    <section className="relative overflow-hidden bg-[#f8fafc] py-16 pt-36 dark:bg-darklight md:py-24 md:pt-44">
       <div className="container mx-auto max-w-7xl px-4">
         
         {/* Entrance Animation for Header */}
@@ -70,8 +70,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="relative z-10 -mt-24 ml-auto w-full rounded-[2.5rem] bg-orange-500 p-8 shadow-[0_20px_50px_rgba(249,115,22,0.3)] md:absolute md:right-0 md:top-1/2 md:mt-0 md:w-[48%] md:-translate-y-1/2 md:p-14"
-          >
-
+           > 
             <h3 className="text-3xl font-extrabold leading-tight text-white md:text-4xl">
               Top-tier services in a wide range of specialties
             </h3>
@@ -90,7 +89,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
               </motion.div>
             </div>
           </motion.div>
-          
+  
         </div>
       </div>
     </section>
