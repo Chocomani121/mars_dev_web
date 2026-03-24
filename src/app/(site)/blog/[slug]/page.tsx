@@ -81,7 +81,7 @@ export default async function Post({ params }: any) {
       <section className=' relative pt-44 dark:bg-darkmode'>
         <div className='container max-w-6xl mx-auto'>
           <div className='grid md:grid-cols-12 grid-cols-1 items-center'>
-            <div className='col-span-12'>
+          <div className='col-span-12'>
               <div className='flex flex-col sm:flex-row'>
                 {/* <span className='text-base text-midnight_text font-medium dark:text-white pr-7 border-r border-solid border-grey dark:border-white w-fit'>
                   {format(new Date(post.date), 'dd MMM yyyy')}
@@ -94,7 +94,7 @@ export default async function Post({ params }: any) {
                 {post.title}
               </h2>
             </div>
-            <div className='hidden'>
+            <div className='flex items-center md:justify-center justify-start gap-6 col-span-4 pt-4 md:pt-0'>
               {/* <Image
                 src={post.authorImage}
                 alt='image'
@@ -134,7 +134,7 @@ export default async function Post({ params }: any) {
                     <div dangerouslySetInnerHTML={{ __html: content }}></div>
                   </div>
                 </div>
-                <div className='w-full px-4 lg:w-4/12'>
+                {/* <div className='w-full px-4 lg:w-4/12'>
                   <div>
                     <div className='-mx-4 mb-8 flex flex-col'>
                       <div className='w-full py-12 px-11 bg-white dark:bg-darklight shadow-lg border-b-2 border-lightborder dark:border-dark_border rounded-t-lg'>
@@ -221,7 +221,7 @@ export default async function Post({ params }: any) {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

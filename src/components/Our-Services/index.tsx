@@ -20,23 +20,27 @@ const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
   return (
     <section className="relative overflow-hidden bg-[#f8fafc] py-16 pt-36 dark:bg-slate-900 md:py-24 md:pt-44">
       {/* Background accents shifted for the new layout */}
-      <div className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-orange-100/50 blur-3xl dark:bg-orange-900/10" />
       <div className="absolute -left-24 bottom-0 h-96 w-96 rounded-full bg-blue-100/30 blur-3xl dark:bg-blue-900/10" />
 
       <div className="container mx-auto max-w-7xl px-4">
         
         {/* Header Section */}
+
         <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="mb-20 text-center"
-        >
-          <motion.h1 variants={fadeInUp} transition={{ delay: 0.1 }} className="mt-4 text-5xl font-black tracking-tight text-slate-900 dark:text-white md:text-5xl">
+         >
+          <h1 className="mt-2 text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white md:text-5xl">
             {title}
-          </motion.h1>
-          <motion.div initial={{ width: 0 }} whileInView={{ width: 120 }} transition={{ delay: 0.5, duration: 0.8 }} className="mx-auto mt-8 h-2 rounded-full bg-orange-500" />
+          </h1>
+          <motion.div 
+            initial={{ width: 0 }}
+            animate={{ width: 96 }} // 24rem
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="mx-auto mt-6 h-1.5 rounded-full bg-orange-500"
+          />
         </motion.div>
 
         {/* Floating Layout Container */}
@@ -51,7 +55,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
             className="relative z-0 h-[400px] w-full overflow-hidden rounded-[2.5rem] shadow-2xl md:ml-auto md:h-[600px] md:w-[80%]"
           >
             <Image
-              src="/images/hero/emp_group.png"
+              src="/images/hero/const_2.png"
               alt="Our Services"
               fill
               className="object-cover transition-transform duration-1000 hover:scale-110"
@@ -63,11 +67,11 @@ const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
 
           {/* 2. The Orange Floating Card (Now shifted to the Left) */}
           <motion.div 
-            initial={{ opacity: 0, x: -50, y: 20 }} // Slide in from left
+            initial={{ opacity: 0, x: -50 }} // Slide in from left
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="relative z-10 -mt-32 mr-auto w-full rounded-[3rem] bg-orange-500 p-10 shadow-[0_30px_60px_-15px_rgba(249,115,22,0.4)] md:absolute md:left-0 md:top-1/2 md:mt-0 md:w-[45%] md:-translate-y-1/2 md:p-16"
+            className="relative z-10 -mt-24 mr-auto w-full rounded-[2.5rem] bg-orange-500 p-8 shadow-[0_20px_50px_-15px_rgba(249,115,22,0.4)] md:absolute md:left-0 md:top-1/2 md:mt-0 md:w-[48%] md:-translate-y-1/2 md:p-14"
           >
             <motion.div initial="hidden" whileInView="visible" transition={{ staggerChildren: 0.2, delayChildren: 0.5 }}>
 

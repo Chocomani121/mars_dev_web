@@ -11,7 +11,15 @@ interface HeroSubProps {
   breadcrumbLinks: BreadcrumbLink[];
 }
 
+// const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
+//   const fadeInUp = {
+//     hidden: { opacity: 0, y: 20 },
+//     visible: { opacity: 1, y: 0 }
+//   };
+
+
 const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
+
   return (
     <section className="relative overflow-hidden bg-[#f8fafc] py-16 pt-36 dark:bg-slate-900 md:py-24 md:pt-44">
       <div className="container mx-auto max-w-7xl px-4">
@@ -71,7 +79,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
             <p className="mt-8 text-lg leading-relaxed text-orange-50 dark:text-orange-100 md:text-xl">
               {description}
             </p>
-
+            
             {/* Breadcrumb with Hover Transition */}
             <div className="mt-10 flex justify-center"> {/* Container to handle the centering */}
               <motion.div 
