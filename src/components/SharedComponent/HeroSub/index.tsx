@@ -38,7 +38,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
             <div className="relative z-10 flex w-full flex-col justify-center bg-white px-6 py-8 md:ml-[48%] md:w-[52%] md:bg-white md:px-10 md:py-12 dark:bg-orange">
               <h3 className="text-2xl font-bold leading-tight text-[#1a2b4a] dark:text-white md:text-3xl">
                 {/* subheading — pass as prop or hardcode */}
-                Top-tier services in a wide range of specialties
+                {/* Top-tier services in a wide range of specialties */}
               </h3>
               <p className="mt-4 text-base leading-relaxed text-gray-600 dark:text-white/70 md:text-lg">
                 {description}
