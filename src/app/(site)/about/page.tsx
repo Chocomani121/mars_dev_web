@@ -1,6 +1,6 @@
 
 import React from "react";
-import HeroSub from "@/components/SharedComponent/HeroSub";
+import AboutUs from "@/components/About-us";
 import { Metadata } from "next";
 import Counter from "@/components/Home/Counter";
 import Progresswork from "@/components/Home/WorkProgress";
@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 const page = () => {
   const breadcrumbLinks = [
     { href: "/", text: "Home" },
-    { href: "/about", text: "About" },
+    { href: "/about-us", text: "About Us" },
   ];
   return (
     <>
-      <HeroSub
+      <AboutUs
         title="About Us"
         description="
         Mars Development Corporation is an 
