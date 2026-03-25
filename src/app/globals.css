@@ -40,6 +40,25 @@
   --z-index-2: 2;
   --z-index-999: 999;
 
+  /*
+   * Mars Devt Corp — logo-based palette (how to use)
+   * ------------------------------------------------------------------
+   * Orange (#FF8C00 … #CC6600) — logo “M” / buildings, energy, CTAs.
+   *   Tailwind: bg-orange, text-orange, border-orange, dark_orange, darker_orange
+   * Teal (#218e91) — logo wordmark & cool accent; quotes, icons, secondary highlights.
+   *   Tailwind: text-teal, border-teal, bg-teal/10, etc.
+   * Navy (#102d47) — headings & primary text on light backgrounds.
+   *   Tailwind: text-midnight_text
+   * Neutrals — page wash: bg-section (#f8fafc); borders: border-border; muted text: text-grey.
+   * Dark theme — header/sections: dark:bg-orange or dark:bg-dark_orange; deep shells: darklight / darkmode.
+   * Template “primary” (#2f73f2) — legacy links/focus in forms; prefer orange/teal above for new UI.
+   * Semantic aliases (optional, same as logo colors):
+   */
+  --color-brand: #ff8c00;
+  --color-brand-deep: #cc6600;
+  --color-brand-bright: #f47000;
+  --color-brand-accent: #218e91;
+
   --color-primary: #2f73f2;
   --color-secondary: #547593;
   --color-midnight_text: #102d47;
@@ -57,6 +76,8 @@
   --color-dark_border: #FFFFFF;
   --color-Sky-blue-mist: #c0d5fb;
   --color-teal: #218e91;
+  --color-off-white: #F3F4F6;
+  --color-dark-navy-blue: #0B1221;
 
 
   --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));

@@ -1,6 +1,6 @@
 import React from "react";
 import Portfolio from "@/components/portfolio/PortfolioList";
-import HeroSub from "@/components/SharedComponent/HeroSub";
+import OurWork from "@/components/Our-work";
 import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Portfolio | Venus",
@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 const PortfolioList = () => {
     const breadcrumbLinks = [
         { href: "/", text: "Home" },
-        { href: "/portfolio", text: "Portfolio" },
+        { href: "/our-work", text: "Our Work" },
     ];
     return (
         <>
-            <HeroSub
+            <OurWork
                 title="Portfolio"
                 description="Dive into a curated collection of my finest work, showcasing expertise across various industries."
                 breadcrumbLinks={breadcrumbLinks}

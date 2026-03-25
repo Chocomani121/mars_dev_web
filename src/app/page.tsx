@@ -9,6 +9,7 @@ import Portfolio from '@/components/SharedComponent/portfollio'
 import Testimonial from '@/components/SharedComponent/Testimonial'
 import Blog from '@/components/SharedComponent/Blog'
 import Contactform from '@/components/Home/Contact';
+import Aboutus from '@/components/About-us'
 
 export const metadata: Metadata = {
   title: "Mars Devt Corporation",
@@ -19,7 +20,7 @@ export default function Home() {
     <main>
       <Hero />
       <Counter isColorMode={false} />
-      <Progresswork isColorMode={false} />
+      <Aboutus isColorMode={false} />
       {/* <Legal isColorMode={false} /> */}
       <Services />
       <Portfolio />

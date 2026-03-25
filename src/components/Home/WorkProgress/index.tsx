@@ -9,10 +9,10 @@ const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
 
 
   return (
-    <section className='relative dark:bg-dark_orange bg-section bg-[url(/images/hero/emp.png)] bg-cover bg-center bg-no-repeat bg-fixed text-white overflow-hidden'
-      id='about'>
+    // <section className='relative dark:bg-dark_orange bg-section bg-[url(/images/hero/emp.png)] bg-cover bg-center bg-no-repeat bg-fixed text-white overflow-hidden'
+    <section className='relative dark:bg-white bg-section text-white overflow-hidden'id='about'>
       {/* Semi-transparent overlay - same as Hero: muted background, legible content */}
-      <div className='absolute inset-0 bg-white/65 dark:bg-white/40 -z-0' aria-hidden />
+      {/* <div className='absolute inset-0 bg-white/65 dark:bg-white/40 -z-0' aria-hidden /> */}
    <div className='container mx-auto max-w-6xl px-4 py-16 relative z-10'>
       <div className='grid md:grid-cols-2 items-stretch gap-8'>
         
