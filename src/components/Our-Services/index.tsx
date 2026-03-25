@@ -18,7 +18,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#f8fafc] py-16 pt-36 dark:bg-slate-900 md:py-24 md:pt-44">
+    <section className="relative overflow-hidden bg-[#f8fafc] py-16 pt-36 dark:bg-white md:py-24 md:pt-44">
       {/* Background accents shifted for the new layout */}
       <div className="absolute -left-24 bottom-0 h-96 w-96 rounded-full bg-blue-100/30 blur-3xl dark:bg-blue-900/10" />
 
@@ -32,7 +32,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
           transition={{ duration: 0.6 }}
           className="mb-20 text-center"
          >
-          <h1 className="mt-2 text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white md:text-5xl">
+          <h1 className="mt-2 text-5xl font-extrabold tracking-tight text-slate-900 dark:text-slate-900 md:text-5xl">
             {title}
           </h1>
           <motion.div 

@@ -17,7 +17,7 @@ const Hero = () => {
               Build with Confidence. Build with Mars
             </span>
           </div>
-          <h1 className='text-midnight_text font-bold dark:text-black/60 text-4xl  md:text-5xl md:leading-[1.15]'>
+          <h1 className='text-midnight_text font-bold dark:text-brand-accent text-4xl  md:text-5xl md:leading-[1.15]'>
             We build. You Succeed.
           </h1>
           <p className='text-grey dark:text-black/50 text-xl font-semibold'>     
