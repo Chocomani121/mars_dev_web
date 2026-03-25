@@ -1,11 +1,11 @@
 'use client'
 import Image from 'next/image'
-import Link from 'next/link'
-
 const Hero = () => {
   return (
-<section className='relative md:pt-100 pt-70 bg-white dark:bg-orange bg-[url(/images/hero/emp.png)] bg-cover bg-center bg-no-repeat bg-fixed text-white overflow-hidden'>   <div className='absolute inset-0 bg-white/45 -z-0'></div>
-     <div className='container mx-auto max-w-6xl px-4 grid grid-cols-12 gap-4 relative z-10 transform -translate-y-12 md:-translate-y-35'>
+<section className='relative md:pt-100 pt-70 bg-white dark:bg-orange bg-[url(/images/hero/emp.png)] bg-cover bg-center bg-no-repeat bg-fixed text-white overflow-hidden'>  
+ <div className='absolute inset-0 bg-white/45 -z-0'></div>
+ <div className='container mx-auto max-w-6xl px-4 grid grid-cols-12 gap-4 relative z-10 transform -translate-y-12 md:-translate-y-35'>
+     {/* <div className='container mx-auto max-w-6xl px-4 grid grid-cols-12 gap-4 relative z-10 pb-12 md:pb-16 transform -translate-y-16 md:-translate-y-40'> */}
         <div
           className='md:col-span-6 col-span-12 p-4 md:px-4 px-0 space-y-4 flex flex-col items-start justify-center'
           data-aos='fade-right'
@@ -26,7 +26,7 @@ const Hero = () => {
           <a
             href='#learn-more'
             className='py-3 bg-orange text-white rounded-md hover:bg-dark_orange transition duration-300 px-8'>
-            Get Quotation
+            Get a Quotation
           </a>
         </div>
 
