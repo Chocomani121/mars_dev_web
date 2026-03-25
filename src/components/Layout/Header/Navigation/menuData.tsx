@@ -7,9 +7,10 @@ export const headerData: HeaderItem[] = [
   // { label: "Our Work", href: "/portfolio" },
   {
     label: "More",
-    href: "/blog",
+    href: "/portfolio",
     submenu: [
-      { label: "View projects", href: "/blog" },
+      // { label: "View projects", href: "/blog" },
+      { label: "Our Work", href: "/portfolio" },
       { label: "Meet the teams", href: "/blog/Blog_1" },
     ],
   },

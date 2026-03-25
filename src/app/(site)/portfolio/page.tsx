@@ -14,6 +14,7 @@ const PortfolioList = () => {
     return (
         <>
             <HeroSub
+                sectionId="hero-sub-portfolio"
                 title="Portfolio"
                 description="Dive into a curated collection of my finest work, showcasing expertise across various industries."
                 breadcrumbLinks={breadcrumbLinks}
