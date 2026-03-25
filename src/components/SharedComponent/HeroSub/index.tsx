@@ -18,7 +18,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
         <h2 className="mb-10 text-center text-4xl font-bold text-[#1a2b4a] dark:text-white md:text-5xl">
           {title}
         </h2>
-
+ 
         {/* White card */}
         <div className="overflow-hidden rounded-3xl bg-white shadow-lg dark:bg-darklight">
           <div className="flex flex-col md:relative md:h-[500px] md:flex-row">

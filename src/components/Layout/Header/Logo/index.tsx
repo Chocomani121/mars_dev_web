@@ -14,7 +14,7 @@ const Logo: React.FC = () => {
     >
       {/* Light mode logo - dark shadow on white header */}
       <Image
-        src="/images/logo/marsdevlogo.png"
+        src="/images/logo/marsdev.png"
         alt="Mars Devt Corp"
         width={160}
         height={50}
@@ -24,7 +24,7 @@ const Logo: React.FC = () => {
       />
       {/* Dark mode logo - shadow + subtle bg for contrast on orange */}
       <Image
-        src="/images/logo/marsdev.png"
+        src="/images/logo/marsdevlogo.png"
         alt="Mars Devt Corp"
         width={160}
         height={50}
