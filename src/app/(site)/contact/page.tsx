@@ -1,8 +1,8 @@
-import ContactForm from "@/components/Contact/Form";
+import ContactForm from "@/components/Home/Contact";
 import ContactInfo from "@/components/Contact/ContactInfo";
 import Location from "@/components/Contact/OfficeLocation";
 import React from "react";
-import HeroSub from "@/components/SharedComponent/HeroSub";
+import Contact from "@/components/Contact";
 import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Contact | Venus",
@@ -15,15 +15,16 @@ const page = () => {
   ];
   return (
     <>
-      <HeroSub
+      {/* <Contact
         title="Contact Us"
         description="Discover a wealth of insightful materials meticulously crafted to provide you with a comprehensive understanding of the latest trends."
         breadcrumbLinks={breadcrumbLinks}
-      />
-      <ContactInfo />
+      /> */}
       <ContactForm />
-      <Location />
-    </>
+      {/* <Location /> */}
+      <ContactInfo />
+  
+    </> 
   );
 };
 

@@ -5,7 +5,7 @@ import Image from 'next/image'
 const ContactForm = () => {
   return (
     <>
-      <section className='dark:bg-darkmode md:pb-24 pb-16'>
+      <section className='dark:bg-darkmode md:pb-24 pb-16 md:pt-44'>
         <div className='container mx-auto max-w-6xl px-4'>
           <div className='grid md:grid-cols-12 grid-cols-1 gap-8'>
             <div className='col-span-6'>

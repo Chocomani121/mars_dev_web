@@ -16,7 +16,7 @@ const Services = () => {
           data-aos-duration='1000'>
           <span className='w-3 h-3 rounded-full bg-success'></span>
           <span className='font-medium text-midnight_text text-sm dark:text-gray-500'>
-            our services
+            Our services
           </span>
         </div>
         <h2

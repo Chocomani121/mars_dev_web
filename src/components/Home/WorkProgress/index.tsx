@@ -14,10 +14,20 @@ const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
       {/* Semi-transparent overlay - same as Hero: muted background, legible content */}
       {/* <div className='absolute inset-0 bg-white/65 dark:bg-white/40 -z-0' aria-hidden /> */}
    <div className='container mx-auto max-w-6xl px-4 py-16 relative z-10'>
+   <div
+        className='flex gap-2 items-center justify-center'
+        data-aos='fade-up'
+        data-aos-delay='200'
+        data-aos-duration='1000'>
+        <span className='w-3 h-3 rounded-full bg-success'></span>
+        <span className='font-medium text-midnight_text text-sm dark:text-gray-500'>
+          Our Goals
+        </span>
+      </div>
       <div className='grid md:grid-cols-2 items-stretch gap-8'>
         
         <div 
-          className='group p-8 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow-md hover:shadow-xl transition-all duration-300'
+          className='group p-8 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-brand-accent shadow-md hover:shadow-xl transition-all duration-300'
           data-aos='fade-right'
           data-aos-delay='200'
           data-aos-duration='1000'>
@@ -54,7 +64,7 @@ const Progresswork = ({ isColorMode }: { isColorMode: Boolean }) => {
 
         {/* Vision Card */}
         <div
-          className='group p-8 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow-md hover:shadow-xl transition-all duration-300'       
+          className='group p-8 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-brand-accent shadow-md hover:shadow-xl transition-all duration-300'       
           data-aos='fade-left'
           data-aos-delay='200'
           data-aos-duration='1000'>

@@ -20,7 +20,7 @@ export default function Home() {
     <main>
       <Hero />
       <Counter isColorMode={false} />
-      <Aboutus isColorMode={false} />
+      <Progresswork isColorMode={false} />
       {/* <Legal isColorMode={false} /> */}
       <Services />
       <Portfolio />
