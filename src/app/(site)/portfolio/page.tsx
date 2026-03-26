@@ -13,12 +13,7 @@ const PortfolioList = () => {
     ];
     return (
         <>
-<<<<<<< HEAD
-            <HeroSub
-                sectionId="hero-sub-portfolio"
-=======
             <OurWork
->>>>>>> af8339fe2ef57112ed3dc39a496d6d24245bb58d
                 title="Portfolio"
                 description="Dive into a curated collection of my finest work, showcasing expertise across various industries."
                 breadcrumbLinks={breadcrumbLinks}
