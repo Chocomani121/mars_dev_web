@@ -148,21 +148,18 @@ const Header: React.FC = () => {
             </div>
           )} */}
           <Link
-            href='#'
+            href='/contact'
             className={`hidden lg:block rounded-lg px-4 py-2 font-medium transition-colors ${
               sticky
                 ? 'bg-white text-orange shadow-md hover:bg-gray-100 dark:bg-white dark:text-orange dark:hover:bg-gray-100'
                 : 'bg-white text-orange shadow-md hover:bg-gray-100 dark:bg-white dark:text-orange dark:hover:bg-gray-100'
-            }`}
-            onClick={() => {
-              setIsSignUpOpen(true)
-            }}>
+            }`}>
             Contact Us
           </Link>
           {isSignUpOpen && (
             <div
               ref={signUpRef}   
-              className='fixed top-0 m-0! left-0 w-full h-full bg- /50 flex items-center justify-center z-50'>
+              className='fixed top-0 m-0! left-0 w-full h-full bg-black/50 flex items-center justify-center z-50'>
               <div className='relative mx-auto w-full max-w-md overflow-hidden rounded-lg bg-white px-8 py-14 text-center dark:bg-darklight'>
                 <button
                   onClick={() => setIsSignUpOpen(false)}

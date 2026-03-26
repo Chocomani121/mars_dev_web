@@ -71,7 +71,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="relative z-10 -mt-24 mr-auto w-full rounded-[2.5rem] bg-orange-500 p-8 shadow-[0_20px_50px_rgba(16,45,71,0.25)] md:absolute md:left-0 md:top-1/2 md:mt-0 md:w-[48%] md:-translate-y-1/2 md:p-14"
+            className="relative z-10 -mt-24 mr-auto w-full rounded-[2.5rem] bg-orange-500 p-8 shadow-[0_20px_50px_-15px_rgba(249,115,22,0.4)] md:absolute md:left-0 md:top-1/2 md:mt-0 md:w-[48%] md:-translate-y-1/2 md:p-14"
           >
             <motion.div initial="hidden" whileInView="visible" transition={{ staggerChildren: 0.2, delayChildren: 0.5 }}>
 

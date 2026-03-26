@@ -1,9 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
+import { COUNTRY_OPTIONS } from '@/data/country-options'
+
 
 const Contactform = () => {
   return (
-    <section className='overflow-x-hidden bg-darkmode dark:bg-white'>
+    <section className='overflow-x-hidden bg-darkmode dark:bg-white md:pt-44'>
       <div className='container mx-auto max-w-6xl px-4'>
         <div className='grid md:grid-cols-12 grid-cols-1 md:gap-7 gap-0'>
           <div
@@ -73,10 +75,17 @@ const Contactform = () => {
                 </div>
                 <div className='w-full'>
                   <input
-                    className='text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary dark:focus:border-primary placeholder:text-grey rounded-lg focus-visible:outline-0'
-                    type='text'
+                    list='country-list'
+                    name='country'
+                    autoComplete='country-name'
                     placeholder='Country'
+                    className='text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary dark:focus:border-primary placeholder:text-grey rounded-lg focus-visible:outline-0'
                   />
+                  <datalist id='country-list'>
+                    {COUNTRY_OPTIONS.map((c) => (
+                      <option key={c.code} value={c.name} />
+                    ))}
+                  </datalist>
                 </div>
                 <div className='w-full'>
                   <textarea

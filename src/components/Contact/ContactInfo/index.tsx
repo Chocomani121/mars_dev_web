@@ -4,10 +4,10 @@ import Link from 'next/link'
 const ContactInfo = () => {
   return (
     <>
-      <section className='dark:bg-darkmode pt-8 md:pb-24 pb-16'>
+      <section className='dark:bg-white pt-8 md:pb-24 pb-16'>
         <div className='container mx-auto max-w-6xl px-4'>
           <div className='flex md:flex-row flex-col md:items-center items-start justify-center md:gap-28 gap-8'>
-            <div className='flex sm:flex-row flex-col items-start sm:gap-8 gap-4'>
+            {/* <div className='flex sm:flex-row flex-col items-start sm:gap-8 gap-4'>
               <div className='bg-primary/20 w-3.75 h-3.75 flex items-center justify-center rounded-full'>
                 <i className="bg-[url('/images/contact-page/email.svg')] bg-no-repeat bg-contain w-8 h-8 inline-block"></i>
               </div>
@@ -38,8 +38,8 @@ const ContactInfo = () => {
                   </Link>
                 </div>
               </div>
-            </div>
-            <div className='flex sm:flex-row flex-col items-start sm:gap-8 gap-4'>
+            </div> */}
+            {/* <div className='flex sm:flex-row flex-col items-start sm:gap-8 gap-4'>
               <div className='bg-primary/20 w-3.75 h-3.75 flex sm:items-center items-start justify-center rounded-full'>
                 <i className="bg-[url('/images/contact-page/Career.svg')] bg-no-repeat bg-contain w-9 h-9 inline-block"></i>
               </div>
@@ -70,11 +70,11 @@ const ContactInfo = () => {
                   </Link>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className='md:pt-32 pt-11 md:pb-28 pb-8'>
             <iframe
-              src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d938779.7831767448!2d71.05098621661072!3d23.20271516446136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e82dd003ff749%3A0x359e803f537cea25!2sGANESH%20GLORY%2C%20Gota%2C%20Ahmedabad%2C%20Gujarat%20382481!5e0!3m2!1sen!2sin!4v1715676641521!5m2!1sen!2sin'
+              src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3255.2259502587754!2d123.94885272707074!3d10.368406702193866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a9a3f002df3caf%3A0xe41e0f04c3927541!2sASHGARD%20INDUSTRIES!5e1!3m2!1sen!2sph!4v1774488891303!5m2!1sen!2sph'
               width='1114'
               height='477'
               loading='lazy'
