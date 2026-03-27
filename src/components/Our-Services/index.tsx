@@ -69,6 +69,14 @@ const HeroSub: FC<HeroSubProps> = ({
 
       </div> */}
 
+      {/* Polygon behind navbar header text */}
+      <div
+        className="hidden md:block absolute top-0 right-0 h-[50%] w-[57%] bg-[#e5e5e5] z-0"
+        style={{
+         clipPath: 'polygon(12% 0, 100% 0, 100% 100%, 100% 500%)'
+        }}
+      ></div>
+      
       {/* Two-column feature panel (full section width) */}
      <div className="relative z-10 h-full w-full pt-24 md:pt-24"> 
         <div className="overflow-hidden shadow-2xl">
