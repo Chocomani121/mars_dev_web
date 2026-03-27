@@ -58,6 +58,12 @@
   --color-brand-deep: #cc6600;
   --color-brand-bright: #f47000;
   --color-brand-accent: #218e91;
+  --color-maroon: #D62828;
+  --color-red-black: #003049;
+  --color-orange: #F77F00;
+  --color-skin: #F8EDED;
+  --color-yellow: #FCBF49;
+  /* --color-white: #FCF9EA; */
 
   --color-primary: #2f73f2;
   --color-secondary: #547593;
@@ -68,7 +74,6 @@
   --color-section: #f8fafc;
   --color-darkmode: #081738;
   --color-darklight: #000f30;
-  --color-orange: #FF8C00;
   --color-dark_orange: #CC6600;
   --color-darker_orange: #f47000;
   --color:blue: #007c95;
@@ -78,6 +83,7 @@
   --color-teal: #218e91;
   --color-off-white: #F3F4F6;
   --color-dark-navy-blue: #0B1221;
+ 
 
 
   --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));

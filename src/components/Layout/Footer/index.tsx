@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const Footer: FC = () => {
   return (
-    <footer className='bg-darkmode relative z-1 border-t border-dark_border px-6'>
+    <footer className='bg-red-black relative z-1 border-t border-dark_border px-6'>
       <div className='container mx-auto max-w-6xl px-4'>
         <div className='grid md:grid-cols-2 grid-cols-1 sm:grid-cols-2'>
           <div className='col-span-1 sm:border-r border-b border-solid border-dark_border flex items-center sm:border-b-0 sm:min-h-25 py-10 shrink-0 '>
@@ -26,7 +26,7 @@ const Footer: FC = () => {
               <Link
                 href='#'
                 className='px-9 py-3 rounded-lg bg-orange text-white hover:bg-blue-700 hover:shadow-none'>
-                Get Quotation
+                Get a Quotation
               </Link>
             </div>
           </div>
