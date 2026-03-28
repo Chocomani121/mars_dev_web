@@ -9,6 +9,8 @@ import {
   aboutIntroTitle,
   aboutPageBreadcrumbs,
   aboutIntroTitle2,
+  aboutIntroDescription2,
+  aboutIntroTitle3,
 } from '@/content/about-intro';
 
 export interface HeroSubProps {
@@ -30,7 +32,8 @@ const HeroSub: FC<HeroSubProps> = ({
   const resolvedDescription = description ?? aboutIntroDescription;
   const resolvedBreadcrumbs = breadcrumbLinks ?? aboutPageBreadcrumbs;
   const resolvedTitle2 = aboutIntroTitle2;
-
+  const resolvedDescription2 = aboutIntroDescription2;
+  const resolvedTitle3 = aboutIntroTitle3;
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
@@ -52,30 +55,30 @@ const HeroSub: FC<HeroSubProps> = ({
         {/* BIG MAIN HEADING */}
         <div className="mb-15">
           <h1 className="text-[80px] md:text-[140px] font-black leading-[0.85] tracking-tighter text-orange uppercase">
-            {aboutIntroTitle} <br /> {aboutIntroTitle2}
+            {resolvedTitle} <br /> {resolvedTitle2}
           </h1>
         </div>
 
         {/* BOTTOM GRID SECTION */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-9 items-start">
           
           {/* Column 1: Small Description */}
           <div className="md:col-span-3 space-y-12">
             <div>
-               <p className="text-sm font-semibold text-gray-500 mb-6">
-                 Luxurious Interior and Industrial Design
-               </p>
-               <p className="text-gray-700 leading-relaxed text-lg">
-                 Modern Elegance: Designs featuring clean lines, neutral palettes, and high-quality materials.
+               {/* <p className="text-sm font-semibold text-gray-500 mb-6">
+                 {resolvedDescription}
+               </p> */}
+               <p className="text-gray-500 leading-relaxed text-lg">
+                 {resolvedDescription}
                </p>
             </div>
           </div>
 
           {/* Column 2: Large Center Image */}
           <div className="md:col-span-5">
-            <div className="relative h-[450px] w-full overflow-hidden rounded-[40px] shadow-sm">
+            <div className="relative h-[450px] w-full overflow-hidden rounded-[20px] shadow-sm md:-mt-15 z-20">
               <Image
-                src="/images/hero/emp_group.png" 
+                src="/images/hero/emp.png" 
                 alt="Interior Design"
                 fill
                 className="object-cover"
@@ -84,8 +87,8 @@ const HeroSub: FC<HeroSubProps> = ({
           </div>
 
           {/* Column 3: Philosophy Section */}
-          <div className="md:col-span-4 space-y-6">
-            <div className="relative h-[220px] w-full overflow-hidden rounded-[40px] shadow-sm mb-6">
+          <div className="md:col-span-4 space-y-6 md:-mt-24 z-20">
+            <div className="relative h-[220px] w-full overflow-hidden rounded-[20px] shadow-sm mb-6">
               <Image
                 src="/images/hero/emp.png" 
                 alt="Our Philosophy"
@@ -94,9 +97,9 @@ const HeroSub: FC<HeroSubProps> = ({
               />
             </div>
             
-            <h2 className="text-4xl font-extrabold text-black">Our Philosophy</h2>
+            <h2 className="text-4xl font-extrabold text-red-black">{resolvedTitle3} </h2>
             <p className="text-gray-600 leading-relaxed">
-              At Britto Charette, we believe in creating luxurious, personalized environments that reflect our clients' tastes and lifestyles.
+                {resolvedDescription2}
             </p>
           </div>
 
