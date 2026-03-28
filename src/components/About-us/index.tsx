@@ -8,6 +8,7 @@ import {
   aboutIntroDescription,
   aboutIntroTitle,
   aboutPageBreadcrumbs,
+  aboutIntroTitle2,
 } from '@/content/about-intro';
 
 export interface HeroSubProps {
@@ -28,6 +29,7 @@ const HeroSub: FC<HeroSubProps> = ({
   const resolvedTitle = title ?? aboutIntroTitle;
   const resolvedDescription = description ?? aboutIntroDescription;
   const resolvedBreadcrumbs = breadcrumbLinks ?? aboutPageBreadcrumbs;
+  const resolvedTitle2 = aboutIntroTitle2;
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -45,12 +47,12 @@ const HeroSub: FC<HeroSubProps> = ({
         }}
       ></div>
 
-      <div className="container mx-auto max-w-7xl">
+      <div className="container mx-auto max-w-7xl mt-10">
         
         {/* BIG MAIN HEADING */}
         <div className="mb-15">
-          <h1 className="text-[80px] md:text-[140px] font-black leading-[0.85] tracking-tighter text-black uppercase">
-            {resolvedTitle}
+          <h1 className="text-[80px] md:text-[140px] font-black leading-[0.85] tracking-tighter text-orange uppercase">
+            {aboutIntroTitle} <br /> {aboutIntroTitle2}
           </h1>
         </div>
 
