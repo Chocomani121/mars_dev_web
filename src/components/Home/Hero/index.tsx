@@ -8,7 +8,7 @@ const Hero = () => {
       {/* ===== TOP HEADER BACKGROUND ===== */}
       <div className="absolute top-0 left-0 w-full h-16 md:h-0 bg-white"></div>
 
-      {/* ===== MAIN ORANGE SHAPE ===== */}
+      {/* ===== MAIN ORANGE SHAPE (for the background) ===== */}
       <div
       className="hidden md:block absolute top-0 left-0 h-full w-[55%] bg-orange z-10"
         style={{
@@ -17,7 +17,7 @@ const Hero = () => {
         }}
       ></div>
 
-      {/* ===== SUBTLE LIGHT ANGLE (layer depth) ===== */}
+      {/* ===== SUBTLE LIGHT ANGLE (layer depth) for the background ===== */}
       <div
         className="hidden md:block absolute top-0 right-0 h-[50%] w-[57%] bg-[#e5e5e5] z-0"
         style={{

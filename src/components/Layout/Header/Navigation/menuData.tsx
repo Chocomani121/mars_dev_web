@@ -5,15 +5,17 @@ export const headerData: HeaderItem[] = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   // { label: "Our Work", href: "/portfolio" },
-  {
-    label: "More",
-    href: "/portfolio",
-    submenu: [
-      // { label: "View projects", href: "/blog" },
-      { label: "Our Work", href: "/portfolio" },
-      { label: "Meet the teams", href: "/blog/Blog_1" },
-    ],
-  },
+  { label: "Our Work", href: "/portfolio" },
+  { label: "Meet the teams", href: "/blog/Blog_1" },
+  // {
+  //   label: "More",
+  //   href: "/portfolio",
+  //   submenu: [
+  //     { label: "View projects", href: "/blog" },
+  //     { label: "Our Work", href: "/portfolio" },
+  //     { label: "Meet the teams", href: "/blog/Blog_1" },
+  //   ],
+  // },
 
   // { label: "Contact", href: "/contact" },
   // { label: "Documentation", href: "/documentation" },

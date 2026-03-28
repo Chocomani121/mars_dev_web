@@ -1,6 +1,7 @@
 import type { BreadcrumbLink } from '@/types/breadcrumb'
 
-export const aboutIntroTitle = 'About Us'
+export const aboutIntroTitle = 'About'
+export const aboutIntroTitle2 = 'Us'
 
 export const aboutIntroDescription = `
         Mars Development Corporation is an 
