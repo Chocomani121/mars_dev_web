@@ -1,45 +1,75 @@
 'use client'
 import Image from 'next/image'
+
 const Hero = () => {
   return (
-<section className='relative md:pt-100 pt-70 bg-white dark:bg-orange bg-[url(/images/hero/emp.png)] bg-cover bg-center bg-no-repeat bg-fixed text-white overflow-hidden'>  
- <div className='absolute inset-0 bg-white/45 -z-0'></div>
- <div className='container mx-auto max-w-6xl px-4 grid grid-cols-12 gap-4 relative z-10 transform -translate-y-12 md:-translate-y-35'>
-     {/* <div className='container mx-auto max-w-6xl px-4 grid grid-cols-12 gap-4 relative z-10 pb-12 md:pb-16 transform -translate-y-16 md:-translate-y-40'> */}
-        <div
-          className='md:col-span-6 col-span-12 p-4 md:px-4 px-0 space-y-4 flex flex-col items-start justify-center'
-          data-aos='fade-right'
-          data-aos-delay='200'
-          data-aos-duration='1000'>
-          <div className='flex gap-2 items-center'>
-            <span className='w-3 h-3 rounded-full bg-success'></span>
-            <span className='font-medium text-midnight_text text-sm dark:text-black/50'>
-              Build with Confidence. Build with Mars
-            </span>
-          </div>
-          <h1 className='text-midnight_text font-bold dark:text-black/60 text-4xl  md:text-5xl md:leading-[1.15]'>
-            We build. You Succeed.
-          </h1>
-          <p className='text-grey dark:text-black/50 text-xl font-semibold'>     
-           Transforming Blueprints into Your Solid Reality
+    <section className="relative bg-white overflow-hidden">
+
+      {/* ===== TOP HEADER BACKGROUND ===== */}
+      <div className="absolute top-0 left-0 w-full h-16 md:h-0 bg-white"></div>
+
+      {/* ===== MAIN ORANGE SHAPE ===== */}
+      <div
+      className="hidden md:block absolute top-0 left-0 h-full w-[55%] bg-orange z-10"
+        style={{
+          clipPath: 'polygon(0 10%, 70% 10%, 100% 100%, 0% 100%)'
+        
+        }}
+      ></div>
+
+      {/* ===== SUBTLE LIGHT ANGLE (layer depth) ===== */}
+      <div
+        className="hidden md:block absolute top-0 right-0 h-[50%] w-[57%] bg-[#e5e5e5] z-0"
+        style={{
+         clipPath: 'polygon(12% 0, 100% 0, 100% 100%, 100% 500%)'
+        }}
+      ></div>
+
+      {/* ===== CONTENT ===== */}
+      <div className="relative container mx-auto max-w-7xl px-6 pt-24 md:pt-32 pb-14 md:pb-20 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+
+        {/* ===== LEFT TEXT ===== */}
+        <div className="relative z-20 text-[#1f2937] md:text-white space-y-5 md:space-y-6 text-center md:text-left">
+
+          {/* small label */}
+          <p className="uppercase tracking-widest text-sm text-[#4b5563] md:text-white/80">
+            Construction & Engineering
           </p>
-          <a
-            href='#learn-more'
-            className='py-3 bg-orange text-white rounded-md hover:bg-dark_orange transition duration-300 px-8'>
-            Get a Quotation
-          </a>
+
+          {/* headline */}
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.1]">
+            We Build. <br />
+            You Succeed. <br />
+          </h1>
+
+          {/* description */}
+          <p className="text-[#4b5563] md:text-white/90 max-w-md text-base md:text-lg mx-auto md:mx-0">
+          Transforming Blueprints into Your Solid Reality.
+          </p>
+
+          {/* button */}
+          <button className="bg-orange md:bg-white text-white md:text-black px-7 py-3 font-semibold rounded shadow-lg hover:scale-105 hover:shadow-xl hover:bg-maroon transition duration-300">
+            Get a Quotation 
+          </button>
         </div>
 
-        <div className="md:col-span-6 col-span-12 relative">
-          <Image
-            src='/images/logo/marsdev.png'
-            alt='hero-image'
-            width={350}
-            height={150}
-            quality={100}
-            style={{ width: '100%', height: 'auto' }}
-            // className='drop-shadow-[0_0_10px_rgba(255,255,255,0.85)]'
-          />
+        
+        {/* ===== RIGHT BRAND PANEL ===== */}
+        <div className="relative z-0 flex items-center justify-start md:h-full">
+
+          <div className="relative w-full md:w-[125%] lg:w-[140%] md:-ml-36 lg:-ml-56 aspect-[4/3] md:aspect-auto md:h-[520px] lg:h-[580px] shadow-2xl">
+            
+            {/* The Orange Accent "L" Frame (Top Right) */}
+            <div className="absolute -top-4 -right-4 w-24 h-24 border-t-[6px] border-r-[6px] border-orange"></div>
+
+            <Image
+              src="/images/hero/emp_group.png"
+              alt="construction"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -47,4 +77,3 @@ const Hero = () => {
 }
 
 export default Hero
-

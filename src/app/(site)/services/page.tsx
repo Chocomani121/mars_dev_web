@@ -5,8 +5,9 @@ import { Metadata } from "next";
 import Counter from "@/components/Home/Counter";
 import Progresswork from "@/components/Home/WorkProgress";
 import Services from "@/components/Home/Services";
+import Commitment from "@/components/Commitment";
 export const metadata: Metadata = {
-    title: "Services | Venus",
+    title: "Services | Mars Development Corporation",
 };
 
 const page = () => {
@@ -25,6 +26,7 @@ const page = () => {
         breadcrumbLinks={breadcrumbLinks}
       />
       <Services/>
+      <Commitment/>
     </>
   );
 };

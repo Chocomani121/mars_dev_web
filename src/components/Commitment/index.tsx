@@ -69,14 +69,6 @@ const HeroSub: FC<HeroSubProps> = ({
 
       </div> */}
 
-      {/* Polygon behind navbar header text */}
-      <div
-        className="hidden md:block absolute top-0 right-0 h-[50%] w-[57%] bg-[#e5e5e5] z-0"
-        style={{
-         clipPath: 'polygon(12% 0, 100% 0, 100% 100%, 100% 500%)'
-        }}
-      ></div>
-      
       {/* Two-column feature panel (full section width) */}
      <div className="relative z-10 h-full w-full pt-24 md:pt-24"> 
         <div className="overflow-hidden shadow-2xl">
@@ -90,30 +82,17 @@ const HeroSub: FC<HeroSubProps> = ({
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="order-1 flex h-full flex-col bg-red-black px-8 py-10 md:order-1 md:px-12 md:py-14 lg:px-14"
             >
-              <motion.div 
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="mb-12 text-center md:mb-14"
-              >
-                <h1 className="mt-2 text-5xl font-extrabold tracking-tight text-red-black dark:text-white md:text-7xl">
-                  {resolvedTitle}
-                </h1>
-                <motion.div 
-                  initial={{ width: 0 }}
-                  animate={{ width: 96 }} // 24rem
-                  transition={{ delay: 0.4, duration: 0.8 }}
-                  className="mx-auto mt-6 h-1.5 rounded-full bg-maroon"
-                />
-              </motion.div>
-              <br></br>
               <br></br>
               <h3 className="max-w-xl text-3xl font-extrabold leading-tight text-white md:text-4xl">
-                 Built with precision and high-quality standards
+              Commitment to Quality and Efficiency
               </h3>
-
+              <br></br>
+              <br></br>
               <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/85 md:mt-8 md:text-lg">
-                {resolvedDescription}
+                Mars Development Corporation prides itself on delivering the highest quality of construction and design. 
+                We adhere to the most rigorous safety standards and employ sustainable building practices to ensure every 
+                project is a testament to our commitment to excellence. Our goal is to be as efficient and reliable as the industry's 
+                largestfirms,consistently meeting project deadlines and exceeding expectations.
               </p>
 
               <div className="mt-8 flex justify-start md:mt-auto md:pt-10">
@@ -150,5 +129,4 @@ const HeroSub: FC<HeroSubProps> = ({
   );
 };
 
-export default HeroSub;
-{/* <div className='absolute inset-0 bg-white/45 -z-0'></div> */}
+export default HeroSub;{/* <div className='absolute inset-0 bg-white/45 -z-0'></div> */}
