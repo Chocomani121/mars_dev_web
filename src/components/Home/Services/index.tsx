@@ -52,7 +52,7 @@ const Services = () => {
             // Inside your .map((item, index) => (...))
             <div
               key={index}
-              className='col-span-4 bg-white flex flex-col justify-between items-center text-center overflow-hidden shadow-service rounded-md dark:bg-red-black'
+              className='col-span-4 bg-white flex flex-col justify-between items-center text-center overflow-hidden shadow-service rounded-md dark:bg-orange'
             >
               {/* Add a featured image at the top of the card */}
               <div className="w-full h-48 relative">

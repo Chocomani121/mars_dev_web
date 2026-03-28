@@ -80,7 +80,7 @@ const Header: React.FC = () => {
     <header
       className={`fixed h-24 top-0 py-1 z-50 w-full transition-all ${
         sticky
-          ? 'shadow-lg bg-white dark:bg-orange dark:shadow-dark-md'
+          ? 'shadow-lg bg-white dark:bg-transparent dark:shadow-dark-md backdrop-blur-md'
           : 'bg-white/90 dark:bg-transparent'
           // : 'bg-white/90 dark:bg-orange/80 backdrop-blur-md'
       }`}>

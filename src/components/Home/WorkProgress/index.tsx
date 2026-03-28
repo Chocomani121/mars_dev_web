@@ -8,6 +8,15 @@ const Progresswork = ({ isColorMode }: { isColorMode: boolean }) => {
       className={`relative overflow-hidden ${isColorMode ? 'bg-section dark:bg-white' : 'bg-section dark:bg-white'}`}
       id='about'
     >
+
+      {/* ===== center shape (for the background) ===== */}
+      <div
+        className='pointer-events-none absolute bottom-0 left-0 z-10 hidden h-[62%] w-[100%] bg-[#e5e5e5] md:block'
+        style={{
+          clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 50%)',
+        }}
+      />
+      
       <div className='container relative z-10 mx-auto max-w-6xl px-4 py-16 md:py-20'>
         <div
           className='mb-10 flex items-center justify-center gap-2 md:mb-12'
