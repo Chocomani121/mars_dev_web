@@ -9,6 +9,7 @@ const Hero = () => {
       <div className="absolute top-0 left-0 w-full h-16 md:h-0 bg-white"></div>
 
       {/* ===== MAIN ORANGE SHAPE (for the background) ===== */}
+
       <div
       className="hidden md:block absolute top-0 left-0 h-full w-[55%] bg-orange z-10"
         style={{
@@ -46,13 +47,18 @@ const Hero = () => {
           <p className="text-[#4b5563] md:text-white/90 max-w-md text-base md:text-lg mx-auto md:mx-0">
           Transforming Blueprints into Your Solid Reality.
           </p>
+          
+           {/* design line*/}
+           <div className="relative before:hidden after:content-[''] after:absolute after:bg-[url('/images/contact/from-round-line.png')] after:bg-no-repeat after:w-[7.3125rem] after:h-[7.3125rem] after:bg-contain after:top-1/2 after:-left-[20%] after:z-1 after:translate-x-1/2 after:translate-y-1/2 md:after:inline-block after:hidden md:row-start-1 row-start-2 md:col-start-8 col-start-1 row-end-2 col-end-13">
+ 
 
           {/* button */}
           <button className="bg-orange md:bg-white text-white md:text-black px-7 py-3 font-semibold rounded shadow-lg hover:scale-105 hover:shadow-xl hover:bg-maroon transition duration-300">
             Get a Quotation 
           </button>
-        </div>
 
+          </div>
+        </div>
         
         {/* ===== RIGHT BRAND PANEL ===== */}
         <div className="relative z-0 flex items-center justify-start md:h-full">
