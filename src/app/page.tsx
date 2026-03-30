@@ -24,8 +24,8 @@ export default function Home() {
       {/* <Legal isColorMode={false} /> */}
       <Services />
       <Portfolio />
-      <Testimonial />
-      <Blog />
+      {/* <Testimonial /> */}
+      {/* <Blog /> */}
       <Contactform />
     </main>
   )

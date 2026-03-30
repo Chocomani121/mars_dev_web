@@ -5,13 +5,16 @@ import { BreadcrumbLink } from '@/types/breadcrumb';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
-  aboutIntroDescription,
-  aboutIntroTitle,
-  aboutPageBreadcrumbs,
-} from '@/content/about-intro';
+  serviceIntroDescription,
+  serviceIntroTitle,
+  servicePageBreadcrumbs,
+  serviceIntroTitle2,
+  serviceIntroDescription2,
+  serviceIntroTitle3,
+} from '@/content/services-intro';
 
 export interface HeroSubProps {
-  /** When omitted, uses shared intro copy from `@/content/about-intro`. */
+  /** When omitted, uses shared intro copy from `@/content/services-intro`. */
   title?: string;
   description?: string;
   breadcrumbLinks?: BreadcrumbLink[];
@@ -23,11 +26,15 @@ const HeroSub: FC<HeroSubProps> = ({
   title,
   description,
   breadcrumbLinks,
+
   isColorMode = false,
 }) => {
-  const resolvedTitle = title ?? aboutIntroTitle;
-  const resolvedDescription = description ?? aboutIntroDescription;
-  const resolvedBreadcrumbs = breadcrumbLinks ?? aboutPageBreadcrumbs;
+  const resolvedTitle = title ?? serviceIntroTitle;
+  const resolvedDescription = description ?? serviceIntroDescription;
+  const resolvedBreadcrumbs = breadcrumbLinks ?? servicePageBreadcrumbs;
+  const resolvedTitle2 = serviceIntroTitle2;
+  const resolvedDescription2 = serviceIntroDescription2;
+  const resolvedTitle3 = serviceIntroTitle3;
 
  
   return (
@@ -45,7 +52,7 @@ const HeroSub: FC<HeroSubProps> = ({
         {/* BIG MAIN HEADING */}
         <div className="mb-15">
           <h1 className="text-[80px] md:text-[140px] font-black leading-[0.85] tracking-tighter text-orange uppercase">
-            {resolvedTitle} <br />
+            {resolvedTitle} <br /> {resolvedTitle2}
           </h1>
         </div>
 
@@ -87,9 +94,9 @@ const HeroSub: FC<HeroSubProps> = ({
               />
             </div>
             
-            <h2 className="text-4xl font-extrabold text-red-black"></h2>
+            <h2 className="text-4xl font-extrabold text-red-black">{resolvedTitle3} </h2>
             <p className="text-gray-600 leading-relaxed">
-
+                  {resolvedDescription2}
             </p>
           </div>
           </div>
