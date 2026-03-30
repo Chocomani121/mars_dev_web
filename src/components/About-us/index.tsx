@@ -4,6 +4,15 @@ import Breadcrumb from '@/components/Breadcrumb';
 import { BreadcrumbLink } from '@/types/breadcrumb';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+
+const carouselImages = [
+  "/images/about/1.png",
+  "/images/about/const_1.png",
+  "/images/about/const_2.png",
+  "/images/about/const_3.png", 
+  "/images/about/const_4.png",
+];
+
 import {
   aboutIntroDescription,
   aboutIntroTitle,
@@ -78,7 +87,7 @@ const HeroSub: FC<HeroSubProps> = ({
           <div className="md:col-span-5">
             <div className="relative h-[450px] w-full overflow-hidden rounded-[20px] shadow-sm md:-mt-15 z-20">
               <Image
-                src="/images/hero/emp.png" 
+                src="/images/about/1.png" 
                 alt="Interior Design"
                 fill
                 className="object-cover"
@@ -90,8 +99,8 @@ const HeroSub: FC<HeroSubProps> = ({
           <div className="md:col-span-4 space-y-6 md:-mt-24 z-20">
             <div className="relative h-[220px] w-full overflow-hidden rounded-[20px] shadow-sm mb-6">
               <Image
-                src="/images/hero/emp.png" 
-                alt="Our Philosophy"
+                src="/images/about/const_3.png" 
+                alt="Our Expertise"
                 fill
                 className="object-cover"
               />
@@ -102,9 +111,9 @@ const HeroSub: FC<HeroSubProps> = ({
                 {resolvedDescription2}
             </p>
           </div>
-
-        </div>
+          </div>
       </div>
+    
     </section>
   );
 };

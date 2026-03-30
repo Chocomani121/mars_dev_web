@@ -137,11 +137,11 @@ const Footer: FC = () => {
                 Our Work
               </Link>
             </li>
-            <li className='text-base text-white/50'>
+            {/* <li className='text-base text-white/50'>
               <Link href='/blog' className='hover:text-primary'>
                 Meet the Teams
               </Link>
-            </li>
+            </li> */}
             <li className='text-base text-white/50'>
               <Link href='/contact' className='hover:text-primary'>
                 Contact
