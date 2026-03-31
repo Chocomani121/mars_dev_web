@@ -35,13 +35,18 @@ const HeaderLink: React.FC<{ item: HeaderItem; sticky?: boolean }> = ({
       <Link
         href={item.href}
         className={[
-          'text-base flex items-center gap-1 py-2 px-3 font-medium rounded-lg transition-all duration-200',
-          // 'hover:bg-gray-100 dark:hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange focus-visible:ring-offset-2',
-          // Always readable: dark text on white (light), light text on orange (dark)
-          'text-black dark:text-red-black hover:text-orange dark:hover:text-maroon',
-          // Active styling - distinct so it's visible when selected
+          'relative text-base flex items-center gap-1 py-2 px-4 font-medium transition-all duration-300',
+          'text-black dark:text-red-black',
+        
+          // ✨ Underline base (hidden)
+          'after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-orange after:transition-all after:duration-300',
+        
+          // Hover effect
+          'hover:after:w-full hover:text-orange',
+        
+          // ✅ Active = underline only
           isActive
-            ? 'text-orange font-semibold bg-orange/10 dark:bg-red-black dark:text-white dark:font-semibold'
+            ? 'after:w-full text-orange'
             : '',
         ].join(' ')}
       >

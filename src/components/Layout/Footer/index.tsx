@@ -122,7 +122,7 @@ const Footer: FC = () => {
       <div className='text-center gap-4 md:gap-0 flex-wrap p-7 border-t border-solid border-dark_border'>
         <div>
           <ul className='flex justify-center mb-4 items-center sm:gap-7 gap-3'>
-            <li className='text-base text-white/50'>
+            {/* <li className='text-base text-white/50'>
               <Link href='/#about' className='hover:text-primary'>
                 About
               </Link>
@@ -146,7 +146,7 @@ const Footer: FC = () => {
               <Link href='/contact' className='hover:text-primary'>
                 Contact
               </Link>
-            </li>
+            </li> 
           </ul>
         </div>
         <div>

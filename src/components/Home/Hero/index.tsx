@@ -92,7 +92,7 @@ const Hero = () => {
             <div className="absolute -top-4 -right-4 w-24 h-24 border-t-[6px] border-r-[6px] border-orange"></div>
 
             <Image
-              src="/images/hero/emp_group.png"
+              src="/images/hero/construction.jpg"
               alt="construction"
               fill
               className="object-cover"
