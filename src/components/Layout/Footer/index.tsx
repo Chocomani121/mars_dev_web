@@ -146,7 +146,7 @@ const Footer: FC = () => {
               <Link href='/contact' className='hover:text-primary'>
                 Contact
               </Link>
-            </li> */}
+            </li> 
           </ul>
         </div>
         <div>
