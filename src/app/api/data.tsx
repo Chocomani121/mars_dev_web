@@ -36,7 +36,7 @@ export const Progress = [
 
 export const Servicebox = [
     {
-        image: '/images/hero/const_1.png',
+        image: '/images/about/const_1.png',
         icon: '/images/services/ux-design-product_1.svg',
         title: 'General Construction',
         description: 'Residential, commercial, and governmental buildings',
@@ -48,7 +48,7 @@ export const Servicebox = [
         description: 'Including roads, bridges, and public utilities.',
     },
     {
-        image: '/images/hero/emp_group.png',
+        image: '/images/services/management.jpg',
         icon: '/images/services/ux-design-product_2.svg',
         title: 'Project Management',
         description: 'Comprehensive oversight from conception to completion.',

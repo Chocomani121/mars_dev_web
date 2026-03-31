@@ -6,12 +6,12 @@ const Logo: React.FC = () => {
   return (
     <Link
       href="/"
-      className="relative flex items-center px-8 py-4 -m-1 overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
-      style={{
-        clipPath: 'polygon(0 0, 100% 0, 88% 100%, 12% 100%)',
-        background: 'white',
-        // background: 'linear-gradient(145deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%)',
-      }}
+      className="relative flex items-center px-0 py-4 -m-1 overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+      // style={{
+      //   clipPath: 'polygon(0 0, 100% 0, 88% 100%, 12% 100%)',
+      //   background: 'white',
+       
+      // }}
     >
       {/* Light mode logo - dark shadow on white header */}
       <Image

@@ -31,7 +31,7 @@ const Progresswork = ({ isColorMode }: { isColorMode: boolean }) => {
         <div className='space-y-10 md:space-y-14'>
           <div className='grid items-stretch gap-8 md:grid-cols-2 md:gap-10'>
             <div
-              className='relative min-h-[300px] overflow-hidden rounded-2xl shadow-lg md:min-h-[430px]'
+              className='relative min-h-[300px] overflow-hidden shadow-lg md:min-h-[430px]'
               data-aos='fade-right'
               data-aos-delay='200'
               data-aos-duration='1000'
@@ -47,7 +47,7 @@ const Progresswork = ({ isColorMode }: { isColorMode: boolean }) => {
             </div>
 
             <article
-              className='rounded-2xl bg-white p-8 text-midnight_text shadow-lg ring-1 ring-border/60 md:p-10'
+              className='bg-white p-8 text-midnight_text shadow-lg ring-1 ring-border/60 md:p-10'
               data-aos='fade-left'
               data-aos-delay='200'
               data-aos-duration='1000'
@@ -66,7 +66,7 @@ const Progresswork = ({ isColorMode }: { isColorMode: boolean }) => {
 
           <div className='grid items-stretch gap-8 md:grid-cols-2 md:gap-10'>
             <article
-              className='order-2 rounded-2xl bg-white p-8 text-midnight_text shadow-lg ring-1 ring-border/60 md:order-1 md:p-10'
+              className='order-2 bg-white p-8 text-midnight_text shadow-lg ring-1 ring-border/60 md:order-1 md:p-10'
               data-aos='fade-right'
               data-aos-delay='200'
               data-aos-duration='1000'
@@ -82,7 +82,7 @@ const Progresswork = ({ isColorMode }: { isColorMode: boolean }) => {
             </article>
 
             <div
-              className='order-1 relative min-h-[300px] overflow-hidden rounded-2xl shadow-lg md:order-2 md:min-h-[430px]'
+              className='order-1 relative min-h-[300px] overflow-hidden shadow-lg md:order-2 md:min-h-[430px]'
               data-aos='fade-left'
               data-aos-delay='200'
               data-aos-duration='1000'

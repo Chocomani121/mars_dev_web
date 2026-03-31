@@ -101,7 +101,7 @@ const Header: React.FC = () => {
       <div className='absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-4'>
         <Link
           href='/contact'
-          className="hidden lg:block rounded-lg px-4 py-2 font-medium transition-all bg-white text-orange shadow-md hover:bg-gray-100 active:scale-95"
+          className="hidden lg:block rounded-lg px-3 py-2 font-medium transition-all bg-white text-orange shadow-md hover:bg-gray-100 active:scale-95"
         >
           Contact Us
         </Link>
