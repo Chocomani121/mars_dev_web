@@ -78,12 +78,12 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed h-24 top-0 py-1 z-50 w-full transition-all ${
-        sticky
-          ? 'shadow-lg bg-white dark:bg-transparent dark:shadow-dark-md backdrop-blur-md'
-          : 'bg-white/90 dark:bg-transparent'
-          // : 'bg-white/90 dark:bg-orange/80 backdrop-blur-md'
-      }`}>
+          className={`fixed h-24 top-0 py-1 z-50 w-full transition-all ${
+            sticky
+              ? 'shadow-lg bg-white/95 dark:bg-white/50 backdrop-blur-md' 
+              : 'bg-transparent'
+          }`}
+        >
         
       <div className='container mx-auto max-w-6xl relative flex h-full items-center p-6'>
         {/* Logo - absolute, won't affect nav/button when resized */}
