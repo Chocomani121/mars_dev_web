@@ -55,9 +55,18 @@ const PortfolioList = () => {
   return (
     <section id="portfolio" className="bg-white py-16 dark:bg-slate-950 md:py-24">
       <div className="container mx-auto max-w-[120rem] px-4 lg:px-12">
+        <div
+          className='mb-10 flex items-center justify-center gap-2 md:mb-12'
+          data-aos='fade-up'
+          data-aos-delay='200'
+          data-aos-duration='1000'
+        >
+          <span className='h-3 w-3 rounded-full bg-teal' />
+          <span className='text-sm font-medium text-midnight_text'>Our Work</span>
+        </div>
         
         {/* Modern Filter Tabs */}
-        <div className="mb-16 flex justify-center gap-4">
+        {/* <div className="mb-16 flex justify-center gap-4">
           {['all', 'web', 'mobile'].map((tab) => (
             <button
               key={tab}
@@ -77,9 +86,10 @@ const PortfolioList = () => {
               <span className="relative z-10">{tab}</span>
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Project Grid */}
+        
         <motion.div
           layout
           className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3"
