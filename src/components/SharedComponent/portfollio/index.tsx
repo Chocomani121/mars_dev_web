@@ -1,6 +1,7 @@
 import React from 'react'
 import PortfolioCard from '@/components/SharedComponent/portfollio/Portfolio-card'
 
+// portfolio card
 const Portfolio = () => {
   return (
     <section id='portfolio' className='dark:bg-darkmode'>

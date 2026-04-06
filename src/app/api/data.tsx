@@ -69,86 +69,111 @@ export const Servicebox = [
     },
 ]
 
-export const portfolioinfo = [
+export type PortfolioCategory =
+    | 'residential'
+    | 'commercial'
+    | 'institutional'
+    | 'infrastructure'
+
+export interface PortfolioItem {
+    image: string
+    alt: string
+    title: string
+    slug: string
+    info: string
+    Class: string
+    category: PortfolioCategory
+}
+
+export const portfolioinfo: PortfolioItem[] = [
     {
-        image: '/images/portfolio/cozycasa.png',
-        alt: 'Portfolio',
-        title: 'Cozycasa',
+        image: '/images/portfolio/private_resort_thumbnail.png',
+        alt: 'Private resort project thumbnail',
+        title: 'Private Resort',
         slug: 'Cozycasa',
-        info: 'Designation',
-        Class: 'md:mt-0'
+        info: 'Custom resort build and landscape integration for a private estate.',
+        Class: 'md:mt-0',
+        category: 'residential',
     },
     {
         image: '/images/portfolio/mars.png',
-        alt: 'Portfolio',
-        title: 'Mars',
+        alt: 'Ashgard commercial project',
+        title: 'Ashgard',
         slug: 'Mars',
-        info: 'Designation',
-        Class: 'md:mt-24'
+        info: 'Commercial development delivered with coordinated structural and finishes scope.',
+        Class: 'md:mt-24',
+        category: 'commercial',
     },
     {
-        image: '/images/portfolio/humans.png',
-        alt: 'Portfolio',
-        title: 'Everyday Humans',
+        image: '/images/portfolio/airmed_thumbnail.png',
+        alt: 'Airmed Medical Center',
+        title: 'Airmed Medical Center',
         slug: 'everyday-humans',
-        info: 'Designation',
-        Class: 'md:mt-0'
+        info: 'Healthcare facility fit-out focused on patient flow and durable, clinical-grade finishes.',
+        Class: 'md:mt-0',
+        category: 'institutional',
     },
     {
-        image: '/images/portfolio/roket-squred.png',
-        alt: 'Portfolio',
-        title: 'Rocket Squared',
+        image: '/images/portfolio/AGE_shed_thumbnail.png',
+        alt: 'AGED Sched facility',
+        title: 'AGED Sched',
         slug: 'rocket-squared',
-        info: 'Designation',
-        Class: 'md:mt-24'
+        info: 'Industrial shed and support structure engineered for operational efficiency.',
+        Class: 'md:mt-24',
+        category: 'commercial',
     },
     {
-        image: '/images/portfolio/panda-logo.png',
-        alt: 'Portfolio',
-        title: 'Panda Logo',
+        image: '/images/portfolio/Consolacion_inside.png',
+        alt: 'Consolacion Gym interior',
+        title: 'Consolacion Gym',
         slug: 'panda-logo',
-        info: 'Designation',
-        Class: 'md:mt-0'
+        info: 'Community sports facility with high-traffic flooring and open-span interior.',
+        Class: 'md:mt-0',
+        category: 'institutional',
     },
     {
-        image: '/images/portfolio/humans.png',
-        alt: 'Portfolio',
-        title: 'Fusion Dynamics',
+        image: '/images/portfolio/laray_warehouse_thumbnail.png',
+        alt: 'Laray Warehouse',
+        title: 'Laray Warehouse',
         slug: 'fusion-dynamics',
-        info: 'Designation',
-        Class: 'md:mt-0'
+        info: 'Warehouse and logistics shell with optimized clear height and loading access.',
+        Class: 'md:mt-0',
+        category: 'commercial',
     },
     {
-        image: '/images/portfolio/cozycasa.png',
-        alt: 'Portfolio',
-        title: 'InnovateX Ventures',
+        image: '/images/portfolio/mactan_training_pool_thumbnail.png',
+        alt: 'Mactan training pool facility',
+        title: 'Mactan Training Pool',
         slug: 'innovate-x-ventures',
-        info: 'Designation',
-        Class: 'md:mt-24'
+        info: 'Aquatic training facility with waterproofing, drainage, and pool-deck coordination.',
+        Class: 'md:mt-24',
+        category: 'institutional',
     },
     {
-        image: '/images/portfolio/mars.png',
-        alt: 'Portfolio',
-        title: 'Nebula Holdings',
+        image: '/images/portfolio/bacaw_resort_thumbnail.png',
+        alt: 'Bakhawan Resort',
+        title: 'Bakhawan Resort',
         slug: 'nebula-holdings',
-        info: 'Designation',
-        Class: 'md:mt-0'
+        info: 'Resort hospitality spaces blending structural work with coastal site conditions.',
+        Class: 'md:mt-0',
+        category: 'residential',
     },
     {
-        image: '/images/portfolio/panda-logo.png',
-        alt: 'Portfolio',
-        title: 'Summit Partners',
+        image: '/images/portfolio/qc_residence_thumbnail.png',
+        alt: 'QC residential build',
+        title: 'QC Residential',
         slug: 'summit-partners',
-        info: 'Designation',
-        Class: 'md:mt-24'
+        info: 'Urban residential project emphasizing layout, envelope, and long-term durability.',
+        Class: 'md:mt-24',
+        category: 'residential',
     },
     {
-        image: '/images/portfolio/roket-squred.png',
-        alt: 'Portfolio',
-        title: 'Apex Strategies',
+        image: '/images/portfolio/navy_hq_thumbnails.png',
+        alt: 'Zambales Navy headquarters',
+        title: 'Zambales Navy HQ',
         slug: 'apex-strategies',
-        info: 'Designation',
-        Class: 'md:mt-0'
+        info: 'Government facility with security, access control, and robust civil coordination.',
+        Class: 'md:mt-0',
+        category: 'infrastructure',
     },
-    
 ]
