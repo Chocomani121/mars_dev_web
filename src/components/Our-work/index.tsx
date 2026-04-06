@@ -44,7 +44,17 @@ const HeroSub: FC<HeroSubProps> = ({
           : 'relative overflow-hidden bg-[#f8fafc] py-16 pt-36 dark:bg-white md:py-24 md:pt-44'
       }
     >
-      <div className="container mx-auto max-w-7xl px-4">
+
+      {/* Polygon behind navbar header text */}
+      <div
+        className="hidden md:block absolute top-0 right-0 h-[50%] w-[57%] bg-[#e5e5e5] z-0"
+        style={{
+         clipPath: 'polygon(12% 0, 100% 0, 100% 100%, 100% 500%)'
+        }}
+        >
+
+      </div>
+      <div className="container relative z-10 mx-auto max-w-7xl px-4">
         
         {/* Entrance Animation for Header */}
         <motion.div 

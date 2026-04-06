@@ -73,7 +73,7 @@ const MeetTheTeamsHero: FC<MeetTheTeamsHeroProps> = ({
             />
             <div className="absolute inset-0 bg-gradient-to-tl from-slate-950/60 via-slate-900/20 to-transparent" />
           </motion.div>
-
+    
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
@@ -108,6 +108,8 @@ const MeetTheTeamsHero: FC<MeetTheTeamsHeroProps> = ({
               </motion.div>
             </motion.div>
           </motion.div>
+
+          
         </div>
       </div>
     </section>
