@@ -1,48 +1,101 @@
 'use client'
+
 import React from 'react'
+import Link from 'next/link'
 import SlickSlider from '@/components/portfolio/Slider'
 import Testimonial from '@/components/SharedComponent/Testimonial'
 import PortfolioDetail from '@/components/portfolio/PortfolioDetail'
 import Portfolio from '@/components/SharedComponent/portfollio'
-import { portfolioinfo } from '@/app/api/data'
+import { portfolioinfo, type PortfolioCategory } from '@/app/api/data'
 import { useParams } from 'next/navigation'
 
+function formatCategory(cat: PortfolioCategory): string {
+  return cat.charAt(0).toUpperCase() + cat.slice(1)
+}
+
 const Portfolios = () => {
-  const { slug } = useParams()
+  const params = useParams()
+  const slugParam = params?.slug
+  const slug = Array.isArray(slugParam) ? slugParam[0] : slugParam
 
-  // Find the blog post by slug
-  const item = portfolioinfo.find((item) => item.slug === slug)
+  const item = slug
+    ? portfolioinfo.find((p) => p.slug === slug)
+    : undefined
 
-  if (!item) {
-    return <div>Loading...</div>
+  if (!slug || !item) {
+    return (
+      <section className='min-h-[50vh] bg-section px-4 py-32 dark:bg-darkmode md:pt-44'>
+        <div className='container mx-auto max-w-lg text-center'>
+          <h1 className='text-2xl font-bold text-midnight_text dark:text-white md:text-3xl'>
+            Project not found
+          </h1>
+          <p className='mt-4 text-secondary dark:text-white/55'>
+            This showcase link may be outdated, or the project slug does not
+            match our list.
+          </p>
+          <Link
+            href='/portfolio'
+            className='mt-8 inline-flex rounded-lg bg-orange px-8 py-3 font-semibold text-white hover:bg-orange/90'>
+            Browse all projects
+          </Link>
+        </div>
+      </section>
+    )
   }
+
   return (
     <>
-      <section className='md:pt-44 pt-36 md:py-24 py-16 dark:bg-darkmode'>
+      <section className='bg-[#f8fafc] px-4 py-16 pt-36 dark:bg-darkmode md:py-24 md:pt-44'>
         <div className='container mx-auto max-w-6xl'>
+          <div className='mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
+            <Link
+              href='/portfolio'
+              className='inline-flex w-fit items-center gap-2 text-sm font-semibold text-primary hover:underline'>
+              <span aria-hidden>←</span> All projects
+            </Link>
+            <span className='w-fit rounded-md bg-white px-3 py-1 text-[10px] font-black uppercase tracking-tighter text-midnight_text shadow-sm dark:bg-slate-800 dark:text-white'>
+              {formatCategory(item.category)}
+            </span>
+          </div>
+
           <div className='branding_heading'>
-            <h2
-              className='text-4xl font-bold text-midnight_text pb-5 dark:text-white'
-              data-aos='fade-right'
+            <div
+              className='mb-4 flex items-center gap-2'
+              data-aos='fade-up'
+              data-aos-delay='100'
+              data-aos-duration='800'>
+              <span
+                className='h-3 w-3 shrink-0 rounded-full bg-teal'
+                aria-hidden
+              />
+              <span className='text-sm font-medium text-midnight_text dark:text-white/60'>
+                Project showcase
+              </span>
+            </div>
+            <h1
+              className='text-4xl font-bold text-midnight_text dark:text-white md:text-5xl'
+              data-aos='fade-up'
               data-aos-delay='200'
-              data-aos-duration='1000'>
+              data-aos-duration='800'>
               {item.title}
-            </h2>
-            <div className='pb-[3.6875rem]'>
+            </h1>
+            <div className='pb-8 pt-5 md:pb-10'>
               <p
-                className='text-secondary text-xl max-w-[38.6875rem] dark:text-white/50'
-                data-aos='fade-Up'
+                className='max-w-2xl text-xl leading-relaxed text-secondary dark:text-white/55'
+                data-aos='fade-up'
                 data-aos-delay='300'
-                data-aos-duration='1000'>
-                We are a dedicated team of passionate product managers, full
-                stack developers, UX/UI designers, QA engineers and marketing.
+                data-aos-duration='800'>
+                {item.info}
               </p>
             </div>
           </div>
-          <SlickSlider />
+
+          <SlickSlider featuredSlug={item.slug} />
         </div>
       </section>
-      <PortfolioDetail />
+
+      <PortfolioDetail project={item} />
+
       <div className='border-b border-primary border-opacity-30'>
         <Testimonial />
       </div>

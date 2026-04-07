@@ -132,7 +132,7 @@ const PortfolioList = () => {
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
                     <div className="absolute inset-0 flex items-center justify-center bg-orange-600/0 opacity-0 transition-all duration-500 group-hover:bg-orange-600/15 group-hover:opacity-100">
                       <span className="translate-y-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-orange-600 shadow-lg opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                        View project
+                        View Project
                       </span>
                     </div>
                   </div>
