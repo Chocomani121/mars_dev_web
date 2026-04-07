@@ -1,48 +1,140 @@
 import React from 'react'
+import Link from 'next/link'
+import type { PortfolioItem } from '@/app/api/data'
 
-const PortfolioDetail = () => {
+const categoryScope: Record<
+  PortfolioItem['category'],
+  { lead: string; bullets: string[] }
+> = {
+  residential: {
+    lead:
+      'Residential delivery prioritizes livability, envelope performance, and coordination with finishes and MEP so owners can move in on schedule.',
+    bullets: [
+      'Structural & architectural coordination',
+      'Interior and exterior finishes',
+      'Site works and landscaping interfaces',
+    ],
+  },
+  commercial: {
+    lead:
+      'Commercial builds focus on clear spans, efficient cores, and tenant-ready spaces while keeping safety and inspections on track.',
+    bullets: [
+      'Shell and core delivery',
+      'Fit-out and phased turnover',
+      'Loading, parking, and circulation',
+    ],
+  },
+  institutional: {
+    lead:
+      'Institutional projects demand durable assemblies, accessible layouts, and tight coordination with operators and end users.',
+    bullets: [
+      'High-traffic flooring and wall systems',
+      'Accessibility and wayfinding support',
+      'Operational phasing where spaces stay usable',
+    ],
+  },
+  infrastructure: {
+    lead:
+      'Public and infrastructure work emphasizes civil coordination, security considerations, and compliance with owner standards.',
+    bullets: [
+      'Civil and structural interfaces',
+      'Perimeter and access control alignment',
+      'Documentation and handover packages',
+    ],
+  },
+}
+
+export interface PortfolioDetailProps {
+  project: PortfolioItem
+}
+
+function formatCategory(cat: PortfolioItem['category']): string {
+  return cat.charAt(0).toUpperCase() + cat.slice(1)
+}
+
+const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
+  const scope = categoryScope[project.category]
+
   return (
-    <>
-      <section className='md:py-24 py-16 dark:bg-orange'>
-        <div className='container mx-auto max-w-6xl'>
-          <div className='flex md:flex-row flex-col items-start w-full justify-between flex-wrap sm:flex-nowrap lg:gap-0 gap-8'>
-            <div className='lg:w-[60%] w-full'>
-              <div className='pb-[3.625rem]'>
-                <p className='md:text-[1.6875rem] text-[1.0625rem] md:leading-[2.25rem] leading-[2rem] font-normal text-midnight_tex dark:text-white'>
-                  We are a dedicated team of passionate product
-                  managers,developers, UX/UI designers, QA engineers experts
-                  helping businesses from new startups
-                </p>
-              </div>
-              <div className='flex items-start justify-between sm:flex-row flex-col lg:gap-0 gap-4'>
-                <p className='sm:text-lg text-base font-normal text-secondary max-w-[19.4375rem] dark:text-white/50'>
-                  Popularised in the 1960s with the release of Letraset sheets
-                  containing Lorem Ipsum passages, and more recently with
-                  desktop publishing software like Aldus PageMaker.
-                </p>
-                <p className='sm:text-lg text-base font-normal text-secondary max-w-[19.4375rem] dark:text-white/50'>
-                  Lorem Ipsum as their default model text, and a search for
-                  lorem ipsum will uncover many web sites still in their
-                  infancy. Various versions have evolved over.
-                </p>
-              </div>
+    <section className='bg-section py-16 dark:bg-slate-900 md:py-24'>
+      <div className='container mx-auto max-w-6xl px-4'>
+        <div className='flex w-full flex-col items-start justify-between gap-10 lg:flex-row lg:gap-12'>
+          <div className='w-full lg:w-[60%]'>
+            <p className='text-[10px] font-bold uppercase tracking-widest text-primary'>
+              Project overview
+            </p>
+            <h2 className='mt-2 text-3xl font-bold text-midnight_text dark:text-white md:text-4xl'>
+              {project.title}
+            </h2>
+            <p className='mt-6 text-lg leading-relaxed text-midnight_text dark:text-white/90 md:text-xl'>
+              {project.info}
+            </p>
+            <p className='mt-6 text-base leading-relaxed text-secondary dark:text-white/60 md:text-lg'>
+              {scope.lead}
+            </p>
+            <div className='mt-8 grid gap-6 sm:grid-cols-2'>
+              <p className='text-base leading-relaxed text-secondary dark:text-white/55'>
+                Mars Devt Corporation supports owners from early coordination
+                through execution, with clear communication and quality checks
+                at each milestone.
+              </p>
+              <p className='text-base leading-relaxed text-secondary dark:text-white/55'>
+                If you would like a walkthrough of our process or a quotation
+                for a similar scope, we are happy to discuss your site and
+                schedule.
+              </p>
             </div>
-            <div
-              className='flex flex-col items-start bg-white shadow-[0px_20px_80px_0px_#68758D26] pt-10 lg:pl-14 pl-9 pb-8 lg:pr-40 pr-10 lg:w-[30%] w-full dark:bg-orange'
-              data-aos='fade-left'
-              data-aos-delay='200'
-              data-aos-duration='1000'>
-              <span className='pb-6 text-2xl text-primary'>Our services</span>
-              <span className='pb-6 text-lg'>Brand Strategy</span>
-              <span className='pb-6 text-lg'>Communications</span>
-              <span className='pb-6 text-lg'>Visual Identity</span>
-              <span className='pb-6 text-lg'>Brand Support</span>
-              <span className='pb-6 text-lg'>Web Design</span>
-            </div>
+            <Link
+              href='/contact'
+              className='mt-10 inline-flex rounded-lg bg-orange px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-orange/90'>
+              Discuss a project
+            </Link>
           </div>
+
+          <aside
+            className='w-full shrink-0 rounded-2xl border border-slate-200 bg-white p-8 shadow-[0px_20px_80px_0px_#68758D26] dark:border-slate-700 dark:bg-slate-950 lg:w-[32%]'
+            data-aos='fade-left'
+            data-aos-delay='200'
+            data-aos-duration='1000'>
+            <span className='text-xs font-bold uppercase tracking-wider text-primary'>
+              At a glance
+            </span>
+            <dl className='mt-6 space-y-5'>
+              <div>
+                <dt className='text-sm font-bold text-midnight_text dark:text-white'>
+                  Category
+                </dt>
+                <dd className='mt-1 text-secondary dark:text-white/60'>
+                  {formatCategory(project.category)}
+                </dd>
+              </div>
+              <div>
+                <dt className='text-sm font-bold text-midnight_text dark:text-white'>
+                  Typical scope
+                </dt>
+                <dd className='mt-2'>
+                  <ul className='space-y-2 text-secondary dark:text-white/60'>
+                    {scope.bullets.map((line) => (
+                      <li key={line} className='flex gap-2'>
+                        <span className='text-primary' aria-hidden>
+                          ·
+                        </span>
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+            <Link
+              href='/portfolio'
+              className='mt-8 inline-block text-sm font-semibold text-primary hover:underline'>
+              ← Back to all projects
+            </Link>
+          </aside>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }
 
