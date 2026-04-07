@@ -30,29 +30,39 @@ const Footer: FC = () => {
               </Link>
             </div>
           </div>
-          <div className='col-span-1 sm:flex items-center sm:min-h-25 py-10 justify-center shrink-0 border-b sm:border-b-0 border-solid border-dark_border'>
-            <div className='flex flex-col md:items-start items-center'>
-              <span className='text-lg font-bold text-white pb-4 inline-block'>
-                Support
-              </span>
-              <div className='pb-5 sm:block flex'>
+          <div className='col-span-1 flex shrink-0 items-center justify-center border-b border-solid border-dark_border py-10 sm:min-h-25 sm:border-b-0'>
+            <div className='mx-auto flex w-full max-w-lg flex-col items-center gap-8 px-2 text-center'>
+              <div className='flex w-full flex-col items-center gap-2'>
                 <p className='text-base font-bold text-white'>Phone</p>
                 <Link
-                  href='tel:+(690) 2560 0020'
-                  className='text-2xl text-white/50 hover:text-white'>
+                  href='tel:+69025600020'
+                  className='break-all text-2xl text-white/50 hover:text-white'>
                   +(690) 2560 0020
                 </Link>
               </div>
-              <div className='sm:block flex items-center gap-3'>
+              <div className='flex w-full flex-col items-center gap-2'>
                 <p className='text-base font-bold text-white'>Email</p>
                 <Link
                   href='mailto:info@venus.com'
-                  className='text-2xl text-white/50 hover:text-white'>
-                  info@Venus.com
+                  className='break-all text-2xl text-white/50 hover:text-white'>
+                  info@venus.com
                 </Link>
               </div>
-              <div>
-                <ul className='flex items-center gap-3 mt-[1.875rem]'>
+
+              <div className='flex w-full flex-col items-center gap-2'>
+                <p className='text-base font-bold text-white'>Address</p>
+                <a
+                  href='https://www.google.com/maps/search/?api=1&query=Ground+Floor%2C+Ashgard+Industries+Bldg.%2C+C.+Congson+St.%2C+Cambiohan%2C+Casili%2C+Consolacion%2C+Cebu%2C+6001'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='max-w-xl text-xl leading-snug text-white/50 hover:text-white md:text-2xl'>
+                  Ground Floor, Ashgard Industries Bldg., C. Congson St.,
+                  Cambiohan, Casili, Consolacion, Cebu, 6001
+                </a>
+              </div>
+
+              <div className='w-full'>
+                <ul className='mt-2 flex items-center justify-center gap-4'>
                   <li className='group'>
                     <Link href='#' className=''>
                       <svg
