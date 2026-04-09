@@ -19,7 +19,7 @@ const Logo: React.FC = () => {
         alt="Mars Devt Corp"
         width={160}
         height={50}
-        style={{ width: '140px', height: 'auto' }}
+        style={{ width: '50px', height: 'auto' }}
         quality={100}
         className="dark:hidden"
       />
@@ -29,7 +29,7 @@ const Logo: React.FC = () => {
         alt="Mars Devt Corp"
         width={160}
         height={50}
-        style={{ width: '80px', height: 'auto' }}
+        style={{ width: '50px', height: 'auto' }}
         quality={100}
         className="hidden dark:block"
       />
