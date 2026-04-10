@@ -38,7 +38,7 @@ const Counter = ({ isColorMode }: { isColorMode: Boolean }) => {
         
         {/* MAIN CARD */}
         <motion.div
-          variants={fadeUp}
+          // variants={fadeUp}
           initial="hidden"
           animate="show"
           whileHover={{ scale: 1.02 }}
