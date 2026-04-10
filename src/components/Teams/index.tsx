@@ -163,7 +163,7 @@ const lineClass =
 
 const OrganizationalChart: FC = () => {
   return (
-    <section className="relative bg-white px-4 py-16 md:px-6">
+    <section className="relative bg-white/95 px-4 py-16 md:px-6">
       <div className="mx-auto max-w-7xl">
         <motion.div
           className="mb-10 max-w-3xl"

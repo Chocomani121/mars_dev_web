@@ -16,12 +16,19 @@ const Services = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          className='flex gap-2 items-center justify-center'
+          className='relative flex gap-2 items-center justify-center'
         >
           <span className='w-3 h-3 rounded-full bg-success'></span>
           <span className='font-medium text-midnight_text text-sm dark:text-gray-500'>
             Our services
           </span>
+          <Link
+            href='/services'
+            className='absolute right-0 inline-flex items-center gap-1 text-sm font-semibold text-orange hover:text-darker_orange transition-colors'
+          >
+            View all
+            <span aria-hidden>-></span>
+          </Link>
         </motion.div>
          <br/>
          <br/>

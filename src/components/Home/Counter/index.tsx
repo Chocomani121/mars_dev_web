@@ -78,7 +78,7 @@ const Counter = ({ isColorMode }: { isColorMode: Boolean }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
-            className="text-xl md:text-3xl font-serif text-slate-800 leading-relaxed italic max-w-2xl mx-auto"
+            className="text-xl md:text-2xl font-serif text-midnight_text leading-relaxed italic max-w-2xl mx-auto"
           >
             "We pride ourselves on our attention to detail and{" "}
             <span className="text-orange">meticulous craftsmanship</span>."
