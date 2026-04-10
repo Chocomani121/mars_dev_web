@@ -16,7 +16,6 @@ import { UserRegistered } from '@/components/Auth/AuthDialog/UserRegistered'
 import AuthDialogContext from '@/app/context/AuthDialogContext'
 
 const Header: React.FC = () => {
-  const pathUrl = usePathname()
   const { theme, setTheme } = useTheme()
 
   const [navbarOpen, setNavbarOpen] = useState(false)
@@ -28,6 +27,7 @@ const Header: React.FC = () => {
   const signInRef = useRef<HTMLDivElement>(null)
   const signUpRef = useRef<HTMLDivElement>(null)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
+  const scrollLockYRef = useRef(0)
 
   const handleScroll = () => {
     setSticky(window.scrollY >= 80)
@@ -67,10 +67,33 @@ const Header: React.FC = () => {
   const path = usePathname()
 
   useEffect(() => {
-    if (isSignInOpen || isSignUpOpen || navbarOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
+    setNavbarOpen(false)
+  }, [path])
+
+  useEffect(() => {
+    const lockScroll =
+      isSignInOpen || isSignUpOpen || navbarOpen
+    if (!lockScroll) return
+
+    scrollLockYRef.current = window.scrollY
+    const y = scrollLockYRef.current
+    document.body.style.position = 'fixed'
+    document.body.style.top = `-${y}px`
+    document.body.style.left = '0'
+    document.body.style.right = '0'
+    document.body.style.width = '100%'
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.left = ''
+      document.body.style.right = ''
+      document.body.style.width = ''
       document.body.style.overflow = ''
+      const restored = scrollLockYRef.current
+      window.scrollTo(0, restored)
+      setSticky(restored >= 80)
     }
   }, [isSignInOpen, isSignUpOpen, navbarOpen])
 
@@ -78,8 +101,8 @@ const Header: React.FC = () => {
 
   return (
     <header
-          className={`fixed h-24 top-0 py-1 z-50 w-full transition-all ${
-            sticky
+          className={`fixed h-20 top-0 py-1 z-50 w-full transition-all ${
+            sticky || navbarOpen || isSignInOpen || isSignUpOpen
               ? 'shadow-lg bg-white/95 dark:bg-white/50 backdrop-blur-md' 
               : 'bg-transparent'
           }`}
@@ -127,24 +150,27 @@ const Header: React.FC = () => {
           )}
           <button
             onClick={() => setNavbarOpen(!navbarOpen)}
-            className='block lg:hidden p-2 rounded-lg'
+            className='block lg:hidden p-3 rounded-lg'
             aria-label='Toggle mobile menu'>
-            <span className='block w-6 h-0.5 bg-black dark:bg-white'></span>
-            <span className='block w-6 h-0.5 bg-black dark:bg-white mt-1.5'></span>
-            <span className='block w-6 h-0.5 bg-black dark:bg-white mt-1.5'></span>
+            <span className='block w-6 h-0.5 bg-black dark:bg-gray-600'></span>
+            <span className='block w-6 h-0.5 bg-black dark:bg-gray-600 mt-1.5'></span>
+            <span className='block w-6 h-0.5 bg-black dark:bg-gray-600 mt-1.5'></span>
           </button>
         </div>   
       </div>
 
       {navbarOpen && (
-        <div className='fixed top-0 left-0 w-full h-full bg-black/50 z-40' />
+        <div
+          className='fixed top-0 left-0 z-[55] h-dvh w-full bg-black/50'
+          aria-hidden
+        />
       )}
 
       <div
         ref={mobileMenuRef}
-        className={`lg:hidden fixed top-0 right-0 h-full w-full bg-white dark:bg-darkmode shadow-lg transform transition-transform duration-300 max-w-xs ${
+        className={`lg:hidden fixed top-0 right-0 z-[60] flex min-h-dvh w-full max-w-xs flex-col bg-section shadow-xl transform transition-transform duration-300 dark:bg-red-black ${
           navbarOpen ? 'translate-x-0' : 'translate-x-full'
-        } z-50`}>
+        }`}>
         <div className='flex items-center justify-between p-4'>
           <h2 className='text-lg font-bold text-midnight_text dark:text-white'>
             Menu
@@ -157,7 +183,7 @@ const Header: React.FC = () => {
               width='24'
               height='24'
               viewBox='0 0 24 24'
-              className='dark:text-white'>
+              className='text-midnight_text dark:text-white'>
               <path
                 fill='none'
                 stroke='currentColor'
@@ -173,7 +199,7 @@ const Header: React.FC = () => {
           {headerData.map((item, index) => (
             <MobileHeaderLink key={index} item={item} />
           ))}
-          <div className='mt-4 flex flex-col gap-4 w-full'>
+          {/* <div className='mt-4 flex flex-col gap-4 w-full'>
             <Link
               href='#'
               className='bg-transparent border border-primary text-primary px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white'
@@ -192,7 +218,7 @@ const Header: React.FC = () => {
               }}>
               Sign Up
             </Link>
-          </div>
+          </div> */}
         </nav>
       </div>
       {/* Successsful Login Alert */}

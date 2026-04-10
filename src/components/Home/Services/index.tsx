@@ -23,15 +23,16 @@ const Services = () => {
             Our services
           </span>
         </motion.div>
-
-        <motion.h2
+         <br/>
+         <br/>
+        {/* <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
           className='sm:text-4xl text-[28px] leading-tight font-bold text-midnight_text md:text-center text-start pt-7 pb-20 md:w-4/6 w-full m-auto dark:darkmode'
         >
           Services specifically designed to meet your business needs
-        </motion.h2>
+        </motion.h2> */}
 
         {/* GRID */}
         <div className='grid md:grid-cols-12 sm:grid-cols-8 grid-cols-1 gap-7'>
