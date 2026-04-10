@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 
 const Services = () => {
   return (
-    <section className='bg-section dark:bg-white' id='services'>
+    <section className='bg-section dark:bg-white/95' id='services'>
       
       <div className='container mx-auto max-w-6xl px-4'>
 

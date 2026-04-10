@@ -1,21 +1,21 @@
 "use client";
 import React, { FC } from 'react';
-import Breadcrumb from '@/components/Breadcrumb';
-import { BreadcrumbLink } from '@/types/breadcrumb';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+
 import {
-  aboutIntroDescription,
-  aboutIntroTitle,
-  aboutPageBreadcrumbs,
-} from '@/content/about-intro';
+  WorkIntroDescription,
+  WorkIntroTitle,
+  WorkPageBreadcrumbs,
+  WorkIntroTitle2,
+  WorkIntroDescription2,
+  WorkIntroTitle3,
+} from '@/content/work-intro';
 
 export interface HeroSubProps {
-  /** When omitted, uses shared intro copy from `@/content/about-intro`. */
   title?: string;
   description?: string;
-  breadcrumbLinks?: BreadcrumbLink[];
-  /** `false` = home-style light shell; `true` = section + orange (dark) like other inner blocks. */
+  breadcrumbLinks?: any;
   isColorMode?: boolean;
 }
 
@@ -25,103 +25,156 @@ const HeroSub: FC<HeroSubProps> = ({
   breadcrumbLinks,
   isColorMode = false,
 }) => {
-  const resolvedTitle = title ?? aboutIntroTitle;
-  const resolvedDescription = description ?? aboutIntroDescription;
-  const resolvedBreadcrumbs = breadcrumbLinks ?? aboutPageBreadcrumbs;
 
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+  const resolvedTitle =  WorkIntroTitle;
+  const resolvedDescription =  WorkIntroDescription;
+  const resolvedTitle2 = title == null ? WorkIntroTitle2 : null;
+  const resolvedDescription2 = WorkIntroDescription2;
+  const resolvedTitle3 = WorkIntroTitle3;
+
+  // 🔥 consistent animation preset
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    show: (i = 1) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.2,
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    })
   };
 
-  
   return (
-    
-    <section
-      className={
-        isColorMode
-          ? 'relative overflow-hidden bg-section py-16 pt-36 dark:bg-white md:py-24 md:pt-44'
-          : 'relative overflow-hidden bg-[#f8fafc] py-16 pt-36 dark:bg-white md:py-24 md:pt-44'
-      }
-    >
+    <section className="relative bg-white/95 py-20 px-6 overflow-hidden">
 
-      {/* Polygon behind navbar header text */}
-      <div
+      {/* BACKGROUND SHAPE */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
         className="hidden md:block absolute top-0 right-0 h-[50%] w-[57%] bg-[#e5e5e5] z-0"
         style={{
-         clipPath: 'polygon(12% 0, 100% 0, 100% 100%, 100% 500%)'
+          clipPath: 'polygon(12% 0, 100% 0, 100% 100%, 100% 500%)'
         }}
-        >
+      />
 
-      </div>
-      <div className="container relative z-10 mx-auto max-w-7xl px-4">
-        
-        {/* Entrance Animation for Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-20 text-center"
-        >
-          <h1 className="mt-2 text-5xl font-extrabold tracking-tight text-slate-900 dark:text-slate-900 md:text-5xl">
-            {resolvedTitle}
-          </h1>
-          <motion.div 
-            initial={{ width: 0 }}
-            animate={{ width: 96 }} // 24rem
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="mx-auto mt-6 h-1.5 rounded-full bg-orange-500"
-          />
+      <div className="container relative z-10 mx-auto max-w-7xl mt-10">
+
+        {/* ===== BIG HEADING ===== */}
+        <motion.div initial="hidden" animate="show" className="mb-15">
+          <motion.h1
+            variants={fadeUp}
+            custom={1}
+            className="text-[80px] md:text-[140px] font-black leading-[0.85] tracking-tighter text-orange uppercase"
+          >
+            {resolvedTitle2 != null ? (
+              <>
+                {resolvedTitle} <br /> {resolvedTitle2}
+              </>
+            ) : (
+              resolvedTitle
+            )}
+          </motion.h1>
         </motion.div>
 
-        {/* Floating Layout Container */}
-        <div className="relative min-h-[500px] w-full">
-          
-          {/* 1. The Large Background Image (Slides in from Left) */}
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative z-0 h-[400px] w-full overflow-hidden rounded-[2.5rem] shadow-2xl md:h-[600px] md:w-[80%]"
-          >
-            <Image
-              src="/images/hero/emp_group.png"
-              alt="Our Team"
-              fill
-              className="object-cover transition-transform duration-1000 hover:scale-110"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/40 to-transparent"></div>
-          </motion.div>
+        {/* ===== GRID ===== */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-9 items-start">
 
-          {/* 2. The Orange Floating Card (Slides in from Right) */}
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="relative z-10 -mt-24 ml-auto w-full rounded-[2.5rem] bg-orange-500 p-8 shadow-[0_20px_50px_rgba(249,115,22,0.3)] md:absolute md:right-0 md:top-1/2 md:mt-0 md:w-[48%] md:-translate-y-1/2 md:p-14"
-           > 
-            <h3 className="text-3xl font-extrabold leading-tight text-white md:text-4xl">
-              Top-tier services in a wide range of specialties
-            </h3>
-            
-            <p className="mt-8 text-lg leading-relaxed text-orange-50 dark:text-orange-100 md:text-xl">
+          {/* LEFT TEXT */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            custom={2}
+            className="md:col-span-3 space-y-12"
+          >
+            <p className="text-gray-500 leading-relaxed text-lg">
               {resolvedDescription}
             </p>
-            
-            {/* Breadcrumb with Hover Transition */}
-            <div className="mt-10 flex justify-center"> {/* Container to handle the centering */}
-              <motion.div 
-                whileHover={{ scale: 1.02 }}
-                className="inline-block rounded-2xl transition-colors"
-              >
-                <Breadcrumb links={resolvedBreadcrumbs} />
+          </motion.div>
+
+          {/* CENTER IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, x: -80 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="md:col-span-5"
+          >
+            <div className="relative h-[450px] w-full overflow-hidden rounded-[5px] shadow-xl md:-mt-0 z-20">
+
+              {/* FRAME */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5 }}
+                className="absolute -top-4 -right-4 w-20 h-20 border-t-[5px] border-r-[5px] border-orange z-30"
+              />
+
+              <motion.div whileHover={{ scale: 1.05 }} className="w-full h-full">
+                <Image
+                  src="/images/hero/emp.png"
+                  alt="Interior Design"
+                  fill
+                  className="object-cover"
+                />
               </motion.div>
+
             </div>
           </motion.div>
-  
+
+          {/* RIGHT COLUMN */}
+          <motion.div
+            initial={{ opacity: 0, x: 80 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="md:col-span-4 space-y-6 md:-mt-24 z-20"
+          >
+
+            {/* SMALL IMAGE */}
+            <div className="relative h-[220px] w-full overflow-hidden rounded-[5px] shadow-xl">
+
+              {/* FRAME */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.7 }}
+                className="absolute -top-3 -right-3 w-16 h-16 border-t-[4px] border-r-[4px] border-orange z-30"
+              />
+
+              <motion.div whileHover={{ scale: 1.05 }} className="w-full h-full">
+                <Image
+                  src="/images/hero/engineer.jpg"
+                  alt="Our Expertise"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+            </div>
+
+            <motion.h2
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              custom={3}
+              className="text-4xl font-extrabold text-red-black"
+            >
+              {resolvedTitle3}
+            </motion.h2>
+
+            <motion.p
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              custom={4}
+              className="text-gray-600 leading-relaxed"
+            >
+              {resolvedDescription2}
+            </motion.p>
+
+          </motion.div>
+
         </div>
       </div>
     </section>

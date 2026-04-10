@@ -18,7 +18,7 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative bg-white overflow-hidden">
+    <section className="relative bg-white/95 overflow-hidden">
 
       {/* ===== BACKGROUND ===== */}
       <div className="absolute top-0 left-0 w-full h-16 md:h-0 bg-white"></div>

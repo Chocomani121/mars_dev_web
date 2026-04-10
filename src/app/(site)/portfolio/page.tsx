@@ -14,7 +14,6 @@ const PortfolioList = () => {
     return (
         <>
             <OurWork
-                title="Our Work"
                 description="Dive into a curated collection of my finest work, showcasing expertise across various industries."
                 breadcrumbLinks={breadcrumbLinks}
             />

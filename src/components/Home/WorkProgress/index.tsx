@@ -5,7 +5,7 @@ import Image from 'next/image'
 const Progresswork = ({ isColorMode }: { isColorMode: boolean }) => {
   return (
     <section
-      className={`relative overflow-hidden ${isColorMode ? 'bg-section dark:bg-white' : 'bg-section dark:bg-white'}`}
+      className={`relative overflow-hidden ${isColorMode ? 'bg-section dark:bg-white/95' : 'bg-section dark:bg-white/95'}`}
       id='about'
     >
 
