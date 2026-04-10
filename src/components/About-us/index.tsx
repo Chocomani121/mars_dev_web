@@ -72,7 +72,7 @@ const HeroSub: FC<HeroSubProps> = ({
           className="mb-15"
         >
           <motion.h1
-            variants={fadeUp}
+            // variants={fadeUp}
             custom={1}
             className="text-[80px] md:text-[140px] font-black leading-[0.85] tracking-tighter text-orange uppercase"
           >
@@ -85,7 +85,7 @@ const HeroSub: FC<HeroSubProps> = ({
 
           {/* LEFT TEXT */}
           <motion.div
-            variants={fadeUp}
+            // variants={fadeUp}
             initial="hidden"
             animate="show"
             custom={2}
@@ -155,7 +155,7 @@ const HeroSub: FC<HeroSubProps> = ({
             </div>
 
             <motion.h2
-              variants={fadeUp}
+              // variants={fadeUp}
               initial="hidden"
               animate="show"
               custom={3}
@@ -165,7 +165,7 @@ const HeroSub: FC<HeroSubProps> = ({
             </motion.h2>
 
             <motion.p
-              variants={fadeUp}
+              // variants={fadeUp}
               initial="hidden"
               animate="show"
               custom={4}
