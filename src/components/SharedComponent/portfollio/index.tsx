@@ -4,7 +4,7 @@ import PortfolioCard from '@/components/SharedComponent/portfollio/Portfolio-car
 // portfolio card
 const Portfolio = () => {
   return (
-    <section id='portfolio' className='dark:bg-darkmode'>
+    <section id='portfolio' className='dark:bg-white/95'>
       <div className='text-center lg:px-0 px-8'>
         <div
           className='flex gap-2 items-center justify-center'
@@ -12,19 +12,19 @@ const Portfolio = () => {
           data-aos-delay='200'
           data-aos-duration='1000'>
           <span className='w-3 h-3 rounded-full bg-success'></span>
-          <span className='font-medium text-midnight_text text-sm dark:text-white/50'>
+          <span className='font-medium text-midnight_text text-sm dark:text-gray-500'>
             Portfolio
           </span>
         </div>
         <h2
-          className='sm:text-4xl text-[28px] leading-tight font-bold text-midnight_text text-center pt-7 pb-4 md:w-4/6 w-full m-auto dark:text-white'
+          className='sm:text-4xl text-[28px] leading-tight font-bold text-midnight_text text-center pt-7 pb-4 md:w-4/6 w-full m-auto dark:text-orange'
           data-aos='fade-left'
           data-aos-delay='200'
           data-aos-duration='1000'>
           Explore my portfolio showcase
         </h2>
         <div className='pb-14 inline-flex'>
-          <p className='text-base font-normal text-grey max-w-29 dark:text-white/50'>
+          <p className='text-base font-normal text-grey max-w-29 dark:text-gray-500'>
             Dive into a curated collection of my finest work, showcasing
             expertise across various industries.
           </p>

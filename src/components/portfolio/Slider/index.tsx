@@ -75,7 +75,7 @@ const SlickSlider: React.FC<SlickSliderProps> = ({ featuredSlug }) => {
       {carouselItems.length > 0 && (
         <>
           <div className='mb-6 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between'>
-            <h3 className='text-xl font-bold text-midnight_text dark:text-white md:text-2xl'>
+            <h3 className='text-xl font-bold text-midnight_text dark:text-orange md:text-2xl'>
               {featuredSlug ? 'More from our portfolio' : 'Project gallery'}
             </h3>
             {featuredSlug && (

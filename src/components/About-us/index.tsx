@@ -50,7 +50,7 @@ const HeroSub: FC<HeroSubProps> = ({
   };
 
   return (
-    <section className="relative bg-white py-20 px-6 overflow-hidden">
+    <section className="relative bg-white/95 py-20 px-6 overflow-hidden">
 
       {/* BACKGROUND SHAPE */}
       <motion.div

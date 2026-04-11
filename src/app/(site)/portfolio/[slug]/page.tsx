@@ -8,6 +8,7 @@ import PortfolioDetail from '@/components/portfolio/PortfolioDetail'
 import Portfolio from '@/components/SharedComponent/portfollio'
 import { portfolioinfo, type PortfolioCategory } from '@/app/api/data'
 import { useParams } from 'next/navigation'
+import { motion } from 'framer-motion'
 
 function formatCategory(cat: PortfolioCategory): string {
   return cat.charAt(0).toUpperCase() + cat.slice(1)
@@ -45,7 +46,17 @@ const Portfolios = () => {
 
   return (
     <>
-      <section className='bg-[#f8fafc] px-4 py-16 pt-36 dark:bg-darkmode md:py-24 md:pt-44'>
+      <section className='bg-[#f8fafc] px-4 py-16 pt-36 dark:bg-white/95 md:py-24 md:pt-44'>
+        <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="hidden md:block absolute top-0 right-0 h-[50%] w-[57%] bg-[#e5e5e5] z-0"
+        style={{
+          clipPath: 'polygon(12% 0, 100% 0, 100% 100%, 100% 500%)'
+        }}
+      />
+
         <div className='container mx-auto max-w-6xl'>
           <div className='mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
             <Link
@@ -68,12 +79,12 @@ const Portfolios = () => {
                 className='h-3 w-3 shrink-0 rounded-full bg-teal'
                 aria-hidden
               />
-              <span className='text-sm font-medium text-midnight_text dark:text-white/60'>
+              <span className='text-sm font-medium text-midnight_text dark:text-gray-500'>
                 Project showcase
               </span>
             </div>
             <h1
-              className='text-4xl font-bold text-midnight_text dark:text-white md:text-5xl'
+              className='text-4xl font-bold text-midnight_text dark:text-orange md:text-5xl'
               data-aos='fade-up'
               data-aos-delay='200'
               data-aos-duration='800'>
@@ -81,7 +92,7 @@ const Portfolios = () => {
             </h1>
             <div className='pb-8 pt-5 md:pb-10'>
               <p
-                className='max-w-2xl text-xl leading-relaxed text-secondary dark:text-white/55'
+                className='max-w-2xl text-xl leading-relaxed text-secondary dark:text-gray-500'
                 data-aos='fade-up'
                 data-aos-delay='300'
                 data-aos-duration='800'>
@@ -96,9 +107,9 @@ const Portfolios = () => {
 
       <PortfolioDetail project={item} />
 
-      <div className='border-b border-primary border-opacity-30'>
+      {/* <div className='border-b border-primary border-opacity-30'>
         <Testimonial />
-      </div>
+      </div> */}
       <Portfolio />
     </>
   )
