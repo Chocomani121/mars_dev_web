@@ -1,8 +1,24 @@
 'use client'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+
+const images = [
+  '/images/hero/construction.jpg',
+  '/images/about/MDC WORKERS.jpg',
+  '/images/hero/emp_group.png',
+];
 
 const Hero = () => {
+  const [index, setIndex] = useState(0);
+
+  // Auto-play logic
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
+    return () => clearInterval(timer);
+  }, []);
 
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -19,11 +35,9 @@ const Hero = () => {
 
   return (
     <section className="relative bg-white/95 overflow-hidden">
-
-      {/* ===== BACKGROUND ===== */}
+      {/* ===== BACKGROUND SHAPES ===== */}
       <div className="absolute top-0 left-0 w-full h-16 md:h-0 bg-white"></div>
-
-      {/* ORANGE SHAPE (MAIN MOTION DRIVER) */}
+      
       <motion.div
         initial={{ x: -200 }}
         animate={{ x: 0 }}
@@ -32,7 +46,6 @@ const Hero = () => {
         style={{ clipPath: 'polygon(0 10%, 70% 10%, 100% 100%, 0% 100%)' }}
       />
 
-      {/* LIGHT SHAPE */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -43,62 +56,65 @@ const Hero = () => {
 
       {/* ===== CONTENT ===== */}
       <div className="relative container mx-auto max-w-7xl px-6 pt-24 md:pt-32 pb-14 md:pb-20 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-
-        {/* ===== LEFT TEXT ===== */}
+        
+        {/* LEFT TEXT (Remains static) */}
         <div className="relative z-20 text-[#1f2937] md:text-white space-y-5 md:space-y-6 text-center md:text-left">
-
-          <motion.p variants={fadeUp} initial="hidden" animate="show" custom={1}
-            className="uppercase tracking-widest text-sm text-[#4b5563] md:text-white/80">
+          <motion.p variants={fadeUp} initial="hidden" animate="show" custom={1} className="uppercase tracking-widest text-sm text-[#4b5563] md:text-white/80">
             Construction & Engineering
           </motion.p>
-
-          <motion.h1 variants={fadeUp} initial="hidden" animate="show" custom={2}
-            className="text-4xl md:text-6xl font-extrabold leading-[1.1]">
-            We Build. <br />
-            You Succeed.
+          <motion.h1 variants={fadeUp} initial="hidden" animate="show" custom={2} className="text-4xl md:text-6xl font-extrabold leading-[1.1]">
+            We Build. <br /> You Succeed.
           </motion.h1>
-
-          <motion.p variants={fadeUp} initial="hidden" animate="show" custom={3}
-            className="text-[#4b5563] md:text-white/90 max-w-md text-base md:text-lg mx-auto md:mx-0">
+          <motion.p variants={fadeUp} initial="hidden" animate="show" custom={3} className="text-[#4b5563] md:text-white/90 max-w-md text-base md:text-lg mx-auto md:mx-0">
             Transforming Blueprints into Your Solid Reality.
           </motion.p>
-
-          <motion.button
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            custom={4}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-orange md:bg-white text-white md:text-black px-7 py-3 font-semibold rounded shadow-lg"
-          >
+          <motion.button variants={fadeUp} initial="hidden" animate="show" custom={4} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-orange md:bg-white text-white md:text-black px-7 py-3 font-semibold rounded shadow-lg">
             Get a Quotation
           </motion.button>
         </div>
 
-        {/* ===== RIGHT IMAGE (SYNCED WITH ORANGE) ===== */}
+        {/* ===== CAROUSEL IMAGE SECTION ===== */}
         <motion.div
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, ease: 'easeOut' }}
           className="relative z-0 flex items-center justify-start md:h-full"
         >
-          <motion.div
-            whileHover={{ x: 10 }} // subtle same-direction movement
-            className="relative w-full md:w-[125%] lg:w-[140%] md:-ml-36 lg:-ml-56 aspect-[4/3] md:aspect-auto md:h-[520px] lg:h-[580px] shadow-2xl"
-          >
+          <div className="relative w-full md:w-[125%] lg:w-[140%] md:-ml-36 lg:-ml-56 aspect-[4/3] md:aspect-auto md:h-[520px] lg:h-[580px] shadow-2xl overflow-hidden">
+            
+            {/* FRAME (Stays on top) */}
+            <div className="absolute -top-4 -right-4 w-24 h-24 border-t-[6px] border-r-[6px] border-orange z-30 pointer-events-none"></div>
 
-            {/* FRAME */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 border-t-[6px] border-r-[6px] border-orange"></div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={images[index]}
+                  alt={`Slide ${index}`}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </motion.div>
+            </AnimatePresence>
 
-            <Image
-              src="/images/hero/construction.jpg"
-              alt="construction"
-              fill
-              className="object-cover"
-              priority
-            />
-          </motion.div>
+            {/* OPTIONAL: NAVIGATION DOTS */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+                {images.map((_, i) => (
+                    <button 
+                        key={i} 
+                        onClick={() => setIndex(i)}
+                        className={`w-2 h-2 rounded-full transition-all ${index === i ? 'bg-orange w-6' : 'bg-white/50'}`}
+                    />
+                ))}
+            </div>
+          </div>
         </motion.div>
 
       </div>
