@@ -43,7 +43,7 @@ const PortfolioList = () => {
   return (
     <section
       id="portfolio"
-      className="bg-section dark:bg-darkmode py-16 md:py-24"
+      className="bg-section dark:bg-white/95 py-16 md:py-24"
       aria-labelledby="portfolio-showcase-heading">
       <div className="container mx-auto max-w-[120rem] px-4 lg:px-12">
         <div
@@ -52,7 +52,7 @@ const PortfolioList = () => {
           data-aos-delay="200"
           data-aos-duration="1000">
           <span className="h-3 w-3 shrink-0 rounded-full bg-teal" aria-hidden />
-          <span className="text-sm font-medium text-midnight_text dark:text-white/60">
+          <span className="text-sm font-medium text-midnight_text dark:text-gray-500">
             Our work
           </span>
         </div>
@@ -64,10 +64,10 @@ const PortfolioList = () => {
           data-aos-duration="1000">
           <h2
             id="portfolio-showcase-heading"
-            className="text-[28px] font-bold leading-tight text-midnight_text dark:text-white sm:text-4xl">
+            className="text-[28px] font-bold leading-tight text-midnight_text dark:text-red-blue sm:text-4xl">
             Project showcase
           </h2>
-          <p className="mt-4 text-base font-normal text-grey dark:text-white/50 md:text-lg">
+          <p className="mt-4 text-base font-normal text-grey dark:text-gray-500 md:text-lg">
             Selected builds across residential, commercial, institutional, and
             public-sector work. Open a project for details and imagery.
           </p>
@@ -139,7 +139,7 @@ const PortfolioList = () => {
 
                   <div className="mt-6 flex flex-1 flex-col text-center md:text-left">
                     <div className="mb-2 flex flex-col items-center gap-2 md:flex-row md:items-center md:gap-3">
-                      <h3 className="text-xl font-black text-midnight_text dark:text-white md:text-2xl">
+                      <h3 className="text-xl font-black text-midnight_text dark:text-orange md:text-2xl">
                         {item.title}
                       </h3>
                       <span
@@ -147,7 +147,7 @@ const PortfolioList = () => {
                         {formatCategoryLabel(item.category)}
                       </span>
                     </div>
-                    <p className="line-clamp-2 flex-1 text-base text-secondary dark:text-white/55 md:text-lg">
+                    <p className="line-clamp-2 flex-1 text-base text-secondary dark:text-gray-500 md:text-lg">
                       {item.info}
                     </p>
                     <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:mt-4">
