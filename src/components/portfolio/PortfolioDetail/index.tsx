@@ -56,24 +56,24 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
   const scope = categoryScope[project.category]
 
   return (
-    <section className='bg-section py-16 dark:bg-slate-900 md:py-24'>
+    <section className='bg-section py-16 dark:bg-white/95 md:py-24'>
       <div className='container mx-auto max-w-6xl px-4'>
         <div className='flex w-full flex-col items-start justify-between gap-10 lg:flex-row lg:gap-12'>
           <div className='w-full lg:w-[60%]'>
             <p className='text-[10px] font-bold uppercase tracking-widest text-primary'>
               Project overview
             </p>
-            <h2 className='mt-2 text-3xl font-bold text-midnight_text dark:text-white md:text-4xl'>
+            <h2 className='mt-2 text-3xl font-bold text-midnight_text dark:text-orange md:text-4xl'>
               {project.title}
             </h2>
-            <p className='mt-6 text-lg leading-relaxed text-midnight_text dark:text-white/90 md:text-xl'>
+            <p className='mt-6 text-lg leading-relaxed text-midnight_text dark:text-red-blue md:text-xl'>
               {project.info}
             </p>
-            <p className='mt-6 text-base leading-relaxed text-secondary dark:text-white/60 md:text-lg'>
+            <p className='mt-6 text-base leading-relaxed text-secondary dark:text-gray-500 md:text-lg'>
               {scope.lead}
             </p>
             <div className='mt-8 grid gap-6 sm:grid-cols-2'>
-              <p className='text-base leading-relaxed text-secondary dark:text-white/55'>
+              <p className='text-base leading-relaxed text-secondary dark:text-gray-500 '>
                 Mars Devt Corporation supports owners from early coordination
                 through execution, with clear communication and quality checks
                 at each milestone.
