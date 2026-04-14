@@ -114,7 +114,7 @@ const HeroSub: FC<HeroSubProps> = ({
 
               <motion.div whileHover={{ scale: 1.05 }} className="w-full h-full">
                 <Image
-                  src="/images/hero/emp.png"
+                  src="/images/portfolio/private_resort_thumbnail.png"
                   alt="Interior Design"
                   fill
                   className="object-cover"
@@ -145,7 +145,7 @@ const HeroSub: FC<HeroSubProps> = ({
 
               <motion.div whileHover={{ scale: 1.05 }} className="w-full h-full">
                 <Image
-                  src="/images/hero/engineer.jpg"
+                  src="/images/portfolio/bacaw_resort_thumbnail.png"
                   alt="Our Expertise"
                   fill
                   className="object-cover"

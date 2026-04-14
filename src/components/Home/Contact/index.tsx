@@ -1,126 +1,107 @@
 'use client'
+
 import React, { useState } from 'react'
-import Image from 'next/image'
 import { COUNTRY_OPTIONS } from '@/data/country-options'
 
-const Contactform = () => {
-  // 1. Initialize state for form fields
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    country: '',
-    message: ''
-  });
-  const [status, setStatus] = useState("");
+const inputClass =
+  'text-midnight_text w-full text-base bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary rounded-lg focus-visible:outline-0'
 
-  // 2. Update state as the user types
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+export default function Contactform() {
+  const [status, setStatus] = useState('')
 
-  // 3. The Submit Handler
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setStatus('Sending…')
+
+    const form = e.currentTarget
+    const payload = Object.fromEntries(new FormData(form).entries())
 
     try {
-      const response = await fetch('/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+        body: JSON.stringify(payload),
+      })
+      const result = await res.json()
 
-      const result = await response.json();
-
-      if (result.success) {
-        setStatus("Message sent! Check your inbox.");
-        setFormData({ firstName: '', lastName: '', email: '', country: '', message: '' });
+      if (res.ok && result.success) {
+        setStatus('Sent. We will get back to you soon.')
+        form.reset()
       } else {
-        setStatus("Error sending message.");
+        setStatus(result.error ?? 'Could not send. Try again later.')
       }
-    } catch (error) {
-      setStatus("An error occurred. Please try again.");
+    } catch {
+      setStatus('Network error. Try again.')
     }
-  };
+  }
 
   return (
     <section className='overflow-x-hidden bg-darkmode dark:bg-white md:pt-44'>
       <div className='container mx-auto max-w-6xl px-4'>
-        <div className='grid md:grid-cols-12 grid-cols-1 md:gap-7 gap-0'>
-          
-          {/* LEFT SIDE INFO */}
+        <div className='grid grid-cols-1 gap-0 md:grid-cols-12 md:gap-7'>
           <div
-            className='row-start-1 col-start-1 row-end-2 md:col-end-7 col-end-12'
+            className='col-end-12 row-start-1 row-end-2 col-start-1 md:col-end-7'
             data-aos='fade-left'
             data-aos-delay='200'
             data-aos-duration='1000'>
-            <div className='flex gap-2 items-center justify-start'>
-              <span className='w-3 h-3 rounded-full bg-success'></span>
-              <span className='font-medium text-sm text-grey'>Contact Us</span>
+            <div className='flex items-center justify-start gap-2'>
+              <span className='h-3 w-3 rounded-full bg-success' />
+              <span className='text-sm font-medium text-grey'>Contact Us</span>
             </div>
-            <h2 className='sm:text-4xl text-[28px] leading-tight font-bold text-orange py-12'>
+            <h2 className='py-12 text-[28px] font-bold leading-tight text-orange sm:text-4xl'>
               Let’s discuss about your project and take it the next level.
             </h2>
-            <div className='grid grid-cols-6 pb-12 border-b border-dark_border '>
+            <div className='grid grid-cols-6 border-b border-dark_border pb-12'>
               <div className='col-span-3'>
-                <span className='text-grey text-lg'>Phone</span>
-                <p className='bg-transparent border-0 text-orange text-lg'>+63-32-520-8534</p>
+                <span className='text-lg text-grey'>Phone</span>
+                <p className='text-lg text-orange'>+63-32-520-8534</p>
               </div>
               <div className='col-span-3'>
-                <span className='text-grey text-lg'>Email</span>
-                <p className='bg-transparent border-0 text-orange text-lg'>admin@ashgard.com.ph</p>
+                <span className='text-lg text-grey'>Email</span>
+                <p className='text-lg text-orange'>admin@ashgard.com.ph</p>
               </div>
               <div className='col-span-6 pt-8'>
-                <span className='text-grey text-lg'>Location</span>
-                <p className='bg-transparent border-0 text-orange text-lg'>
+                <span className='text-lg text-grey'>Location</span>
+                <p className='text-lg text-orange'>
                   C. Congson St., Cambiohan, Casili, Consolacion, Cebu, Philippines
                 </p>
               </div>
             </div>
           </div>
 
-          {/* RIGHT SIDE FORM */}
           <div
             data-aos='fade-right'
             data-aos-delay='200'
             data-aos-duration='1000'
-            className="relative before:content-[''] before:absolute before:bg-[url('/images/contact/form-line.png')] before:bg-no-repeat before:w-[13rem] before:h-24 before:top-5% before:bg-contain before:left-[35%] before:z-1 before:translate-x-full lg:before:inline-block before:hidden after:content-[''] after:absolute after:bg-[url('/images/contact/from-round-line.png')] after:bg-no-repeat after:w-[6.3125rem] after:h-[6.3125rem] after:bg-contain after:top-1/2 after:-left-[25%] after:z-1 after:translate-x-1/2 after:translate-y-1/2 md:after:inline-block after:hidden md:row-start-1 row-start-2 md:col-start-8 col-start-1 row-end-2 col-end-13">
-            <div className='lg:mt-0 mt-8 bg-white dark:bg-darkmode max-w-[50rem] m-auto pt-[2.1875rem] pb-8 px-[2.375rem] rounded-md relative z-10'>
-              <h2 className='sm:text-3xl text-lg font-bold text-midnight_text mb-3 dark:text-white'>
+            className="relative col-start-1 col-end-13 row-start-2 row-end-2 before:hidden before:absolute before:left-[35%] before:top-5% before:z-1 before:h-24 before:w-[13rem] before:translate-x-full before:bg-[url('/images/contact/form-line.png')] before:bg-contain before:bg-no-repeat before:content-[''] after:hidden after:absolute after:-left-[25%] after:top-1/2 after:z-1 after:h-[6.3125rem] after:w-[6.3125rem] after:translate-x-1/2 after:translate-y-1/2 after:bg-[url('/images/contact/from-round-line.png')] after:bg-contain after:bg-no-repeat after:content-[''] md:col-start-8 md:row-start-1 lg:before:inline-block md:after:inline-block">
+            <div className='relative z-10 m-auto mt-8 max-w-[50rem] rounded-md bg-white px-[2.375rem] pb-8 pt-[2.1875rem] dark:bg-darkmode lg:mt-0'>
+              <h2 className='mb-3 text-lg font-bold text-midnight_text dark:text-white sm:text-3xl'>
                 Start the project
               </h2>
-              
-              <form onSubmit={handleSubmit} className='flex w-full m-auto justify-between flex-wrap gap-4'>
-                <div className='flex gap-4 w-full'>
+
+              <form onSubmit={handleSubmit} className='m-auto flex w-full flex-wrap justify-between gap-4'>
+                <div className='flex w-full gap-4'>
                   <input
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleChange}
+                    name='firstName'
                     required
-                    className='text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary rounded-lg focus-visible:outline-0'
+                    className={inputClass}
                     type='text'
                     placeholder='First name'
                   />
                   <input
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleChange}
+                    name='lastName'
                     required
-                    className='text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary rounded-lg focus-visible:outline-0'
+                    className={inputClass}
                     type='text'
                     placeholder='Last name'
                   />
                 </div>
                 <div className='w-full'>
                   <input
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
+                    name='email'
                     required
                     type='email'
-                    className='text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary rounded-lg focus-visible:outline-0'
+                    className={inputClass}
                     placeholder='youremail@website.com'
                   />
                 </div>
@@ -128,10 +109,8 @@ const Contactform = () => {
                   <input
                     list='country-list'
                     name='country'
-                    value={formData.country}
-                    onChange={handleChange}
                     placeholder='Country'
-                    className='text-midnight_text w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary rounded-lg focus-visible:outline-0'
+                    className={inputClass}
                   />
                   <datalist id='country-list'>
                     {COUNTRY_OPTIONS.map((c) => (
@@ -141,22 +120,23 @@ const Contactform = () => {
                 </div>
                 <div className='w-full'>
                   <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
+                    name='message'
                     required
-                    className='text-midnight_text h-[9.375rem] w-full text-base transition-[0.5s] bg-transparent dark:border-dark_border dark:text-white px-[0.9375rem] py-[0.830rem] border border-border border-solid focus:border-primary rounded-lg focus-visible:outline-0'
-                    placeholder='Let us know about your project'></textarea>
+                    className={`${inputClass} h-[9.375rem]`}
+                    placeholder='Let us know about your project'
+                  />
                 </div>
 
                 <div className='w-full'>
                   <button
-                    className='w-full bg-orange hover:bg-orange/90 text-white py-3 rounded-lg font-bold transition-all disabled:opacity-50'
                     type='submit'
-                    disabled={status === "Sending..."}>
-                    {status === "Sending..." ? "Sending..." : "Submit Inquiry"}
+                    disabled={status === 'Sending…'}
+                    className='w-full rounded-lg bg-orange py-3 font-bold text-white transition-all hover:bg-orange/90 disabled:opacity-50'>
+                    {status === 'Sending…' ? 'Sending…' : 'Submit Inquiry'}
                   </button>
-                  {status && <p className="mt-4 text-center text-sm font-semibold text-orange">{status}</p>}
+                  {status ? (
+                    <p className='mt-4 text-center text-sm font-semibold text-orange'>{status}</p>
+                  ) : null}
                 </div>
               </form>
             </div>
@@ -166,5 +146,3 @@ const Contactform = () => {
     </section>
   )
 }
-
-export default Contactform

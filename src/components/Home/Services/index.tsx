@@ -27,7 +27,7 @@ const Services = () => {
             className='absolute right-0 inline-flex items-center gap-1 text-sm font-semibold text-orange hover:text-darker_orange transition-colors'
           >
             View all
-            <span aria-hidden>-></span>
+            <span aria-hidden></span>
           </Link>
         </motion.div>
          <br/>
