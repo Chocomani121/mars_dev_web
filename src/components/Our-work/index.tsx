@@ -1,7 +1,7 @@
 "use client";
 import React, { FC } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 
 import {
   WorkIntroDescription,
@@ -33,7 +33,7 @@ const HeroSub: FC<HeroSubProps> = ({
   const resolvedTitle3 = WorkIntroTitle3;
 
   // 🔥 consistent animation preset
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     show: (i = 1) => ({
       opacity: 1,
@@ -41,7 +41,7 @@ const HeroSub: FC<HeroSubProps> = ({
       transition: {
         delay: i * 0.2,
         duration: 0.8,
-        ease: "easeOut"
+        ease: 'easeOut' as const,
       }
     })
   };

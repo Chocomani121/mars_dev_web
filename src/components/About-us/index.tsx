@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import Breadcrumb from '@/components/Breadcrumb';
 import { BreadcrumbLink } from '@/types/breadcrumb';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 
 import {
   aboutIntroDescription,
@@ -36,7 +36,7 @@ const HeroSub: FC<HeroSubProps> = ({
   const resolvedTitle3 = aboutIntroTitle3;
 
   // 🔥 animation presets
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     show: (i = 1) => ({
       opacity: 1,
@@ -44,7 +44,7 @@ const HeroSub: FC<HeroSubProps> = ({
       transition: {
         delay: i * 0.2,
         duration: 0.8,
-        ease: "easeOut"
+        ease: 'easeOut' as const,
       }
     })
   };

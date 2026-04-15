@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, type Variants } from 'framer-motion'
 
 const images = [
   '/images/hero/construction.jpg',
@@ -20,7 +20,7 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     show: (i = 1) => ({
       opacity: 1,
@@ -28,7 +28,7 @@ const Hero = () => {
       transition: {
         delay: i * 0.2,
         duration: 0.8,
-        ease: 'easeOut'
+        ease: 'easeOut' as const
       }
     })
   }

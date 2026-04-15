@@ -1,11 +1,11 @@
 "use client";
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion, type Variants } from 'framer-motion'
 
 const Counter = ({ isColorMode }: { isColorMode: Boolean }) => {
 
   // animation preset (same system as other sections)
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 40, scale: 0.95 },
     show: {
       opacity: 1,
@@ -13,7 +13,7 @@ const Counter = ({ isColorMode }: { isColorMode: Boolean }) => {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
+        ease: 'easeOut' as const
       }
     }
   };
