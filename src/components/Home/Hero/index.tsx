@@ -59,6 +59,23 @@ const Hero = () => {
         
         {/* LEFT TEXT (Remains static) */}
         <div className="relative z-20 text-[#1f2937] md:text-white space-y-5 md:space-y-6 text-center md:text-left">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            custom={0.5}
+            className="mx-auto w-fit md:mx-0 drop-shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
+          >
+            <Image
+              src="/images/logo/marsdevlogo.png"
+              alt="Mars Dev logo"
+              width={220}
+              height={72}
+              className="h-auto w-[170px] md:w-[220px]"
+              priority
+            />
+          </motion.div>
+          
           <motion.p variants={fadeUp} initial="hidden" animate="show" custom={1} className="uppercase tracking-widest text-sm text-[#4b5563] md:text-white/80">
             Construction & Engineering
           </motion.p>

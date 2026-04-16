@@ -120,8 +120,10 @@ const PortfolioList = () => {
                 <Link
                   href={`/portfolio/${item.slug}`}
                   className="group flex h-full flex-col outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-950">
+
+                  {/* Portfolio card image hover effect with shadow and border on hover, And  */}
                   <div
-                    className={`relative aspect-video w-full overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-100 shadow-xl transition-all duration-500 group-hover:-translate-y-1 group-hover:border-orange-200/60 group-hover:shadow-2xl dark:border-slate-800 dark:bg-slate-900 dark:group-hover:border-orange-500/30 ${item.Class}`}>
+                    className="relative aspect-video w-full overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-100 shadow-xl transition-all duration-500 group-hover:-translate-y-1 group-hover:border-orange-200/60 group-hover:shadow-2xl dark:border-slate-800 dark:bg-slate-900 dark:group-hover:border-orange-500/30">
                     <Image
                       src={item.image}
                       alt={item.alt}
@@ -136,6 +138,7 @@ const PortfolioList = () => {
                       </span>
                     </div>
                   </div>
+
 
                   <div className="mt-6 flex flex-1 flex-col text-center md:text-left">
                     <div className="mb-2 flex flex-col items-center gap-2 md:flex-row md:items-center md:gap-3">

@@ -3,7 +3,6 @@
 import React from 'react'
 import Link from 'next/link'
 import SlickSlider from '@/components/portfolio/Slider'
-import Testimonial from '@/components/SharedComponent/Testimonial'
 import PortfolioDetail from '@/components/portfolio/PortfolioDetail'
 import Portfolio from '@/components/SharedComponent/portfollio'
 import { portfolioinfo, type PortfolioCategory } from '@/app/api/data'
@@ -46,19 +45,19 @@ const Portfolios = () => {
 
   return (
     <>
-      <section className='bg-[#f8fafc] px-4 py-16 pt-36 dark:bg-white/95 md:py-24 md:pt-44'>
+      <section className='relative overflow-hidden bg-[#f8fafc] px-4 py-16 pt-36 dark:bg-white/95 md:py-24 md:pt-44'>
         <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="hidden md:block absolute top-0 right-0 h-[50%] w-[57%] bg-[#e5e5e5] z-0"
+        className="hidden md:block absolute top-0 right-0 h-[50%] w-[57%] bg-[#e5e5e5]"
         style={{
           clipPath: 'polygon(12% 0, 100% 0, 100% 100%, 100% 500%)'
         }}
       />
 
-        <div className='container mx-auto max-w-6xl'>
-          <div className='mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
+        <div className='container relative z-10 mx-auto max-w-6xl'>
+          <div className='mb-8 flex flex-col items-center gap-4 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left'>
             <Link
               href='/portfolio'
               className='inline-flex w-fit items-center gap-2 text-sm font-semibold text-primary hover:underline'>
@@ -69,9 +68,9 @@ const Portfolios = () => {
             </span>
           </div>
 
-          <div className='branding_heading'>
+          <div className='branding_heading text-center sm:text-left'>
             <div
-              className='mb-4 flex items-center gap-2'
+              className='mb-4 flex items-center justify-center gap-2 sm:justify-start'
               data-aos='fade-up'
               data-aos-delay='100'
               data-aos-duration='800'>
@@ -92,7 +91,7 @@ const Portfolios = () => {
             </h1>
             <div className='pb-8 pt-5 md:pb-10'>
               <p
-                className='max-w-2xl text-xl leading-relaxed text-secondary dark:text-gray-500'
+                className='mx-auto max-w-2xl text-xl leading-relaxed text-secondary dark:text-gray-500 sm:mx-0'
                 data-aos='fade-up'
                 data-aos-delay='300'
                 data-aos-duration='800'>
