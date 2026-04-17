@@ -43,3 +43,10 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+#
+nano .env = check enviroment of project 
+ls -la = check directory 
+npm run build = restart if server was updated 
+pm2 restart ("name") = restart project in production 
+pm2 delete ("name") = delete
+
